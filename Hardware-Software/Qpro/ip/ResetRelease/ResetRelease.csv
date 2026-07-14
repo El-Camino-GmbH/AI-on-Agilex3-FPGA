@@ -1,0 +1,18 @@
+# system info ResetRelease on 2026.03.16.15:42:25
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for ResetRelease on 2026.03.16.15:42:25
+files:
+filepath,kind,attributes,module,is_top
+sim/ResetRelease.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ResetRelease,true
+intel_user_rst_clkgate_101/sim/intel_user_rst_clkgate.sv,SYSTEM_VERILOG,,intel_user_rst_clkgate,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ResetRelease.intel_user_rst_clkgate_0,intel_user_rst_clkgate

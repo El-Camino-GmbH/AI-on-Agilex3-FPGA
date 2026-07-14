@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<internal_error>
+	<sub_system>ERR</sub_system>
+	<callstack>	0x7ffcc8dc1880: dni_orch + 0x11880 (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x3330)
+	0x7ffd05719c84: ucrtbase + 0x49c84 (bsearch_s + 0x254)
+	0x7ffd057198a6: ucrtbase + 0x498a6 (_execute_onexit_table + 0x86)
+	0x7ffd0571985c: ucrtbase + 0x4985c (_execute_onexit_table + 0x3c)
+	0x7ffcc8dbf5b0: dni_orch + 0xf5b0 (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x1060)
+	0x7ffcc8dbe69d: dni_orch + 0xe69d (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x14d)
+	0x7ffcc8dbe97d: dni_orch + 0xe97d (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x42d)
+	0x7ffd07d3dd59: ntdll + 0x15dd59 (RtlEncodeRemotePointer + 0x89)
+	0x7ffd07bfba52: ntdll + 0x1ba52 (RtlAllocateHeap + 0x1ac2)
+	0x7ffd07cbee3b: ntdll + 0xdee3b (ShipAssert + 0x83b)
+	0x7ffd07c057cd: ntdll + 0x257cd (RtlNtStatusToDosError + 0x47d)
+	0x7ffd07c05971: ntdll + 0x25971 (RtlNtStatusToDosError + 0x621)
+	0x7ffd07c05971: ntdll + 0x25971 (RtlNtStatusToDosError + 0x621)
+	0x7ffd07c05971: ntdll + 0x25971 (RtlNtStatusToDosError + 0x621)
+	0x7ffd07c05971: ntdll + 0x25971 (RtlNtStatusToDosError + 0x621)
+	0x7ffd07c05971: ntdll + 0x25971 (RtlNtStatusToDosError + 0x621)
+	0x7ffd07c05613: ntdll + 0x25613 (RtlNtStatusToDosError + 0x2c3)
+	0x7ffd07c045cf: ntdll + 0x245cf (LdrUnloadDll + 0x1ef)
+	0x7ffd052317a8: KERNELBASE + 0x217a8 (FreeLibrary + 0x18)
+	0x7ffcacee1fc8: mega_qsysipc_jni_stub + 0x1fc8 (Java_com_altera_qsys_ipc_QsysIPCNativeInterface_nativeShutDownJNIModule + 0x6c8)
+	0x7ffcacee1908: mega_qsysipc_jni_stub + 0x1908 (Java_com_altera_qsys_ipc_QsysIPCNativeInterface_nativeShutDownJNIModule + 0x8)
+	0x21ac4e6d6e0:
+	0x21b25721427:
+	       0x5a:
+	0x21affffffff:
+	0x21ac4e6951f:
+	0x61666b0e7:
+	0x21ac4e6d3b5:
+	0x421fcfefdf:
+	0x21b25721427:
+	0x421fcff047:
+	0x21b257284ff:
+</callstack>
+	<error>*** Fatal Error: Access Violation at 00007FFCC8DC1881</error>
+	<date>Tue Jul 14 13:34:54 2026
+</date>
+	<version>Version 25.3.0 Build 109 09/24/2025 SC Pro Edition</version>
+</internal_error>

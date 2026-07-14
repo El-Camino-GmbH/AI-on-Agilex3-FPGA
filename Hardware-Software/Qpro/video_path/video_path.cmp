@@ -1,0 +1,28 @@
+	component video_path is
+		port (
+			sys_clk_in_clk                                 : in  std_logic                      := 'X';             -- clk
+			sys_rst_in_reset                               : in  std_logic                      := 'X';             -- reset
+			mm_bus_in_waitrequest                          : out std_logic;                                         -- waitrequest
+			mm_bus_in_readdata                             : out std_logic_vector(63 downto 0);                     -- readdata
+			mm_bus_in_readdatavalid                        : out std_logic;                                         -- readdatavalid
+			mm_bus_in_burstcount                           : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- burstcount
+			mm_bus_in_writedata                            : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- writedata
+			mm_bus_in_address                              : in  std_logic_vector(12 downto 0)  := (others => 'X'); -- address
+			mm_bus_in_write                                : in  std_logic                      := 'X';             -- write
+			mm_bus_in_read                                 : in  std_logic                      := 'X';             -- read
+			mm_bus_in_byteenable                           : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- byteenable
+			mm_bus_in_debugaccess                          : in  std_logic                      := 'X';             -- debugaccess
+			vvp_demosaic_axi4s_vid_in_tdata                : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- tdata
+			vvp_demosaic_axi4s_vid_in_tvalid               : in  std_logic                      := 'X';             -- tvalid
+			vvp_demosaic_axi4s_vid_in_tready               : out std_logic;                                         -- tready
+			vvp_demosaic_axi4s_vid_in_tlast                : in  std_logic                      := 'X';             -- tlast
+			vvp_demosaic_axi4s_vid_in_tuser                : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- tuser
+			vvp_vfw_debug_av_mm_mem_write_host_address     : out std_logic_vector(31 downto 0);                     -- address
+			vvp_vfw_debug_av_mm_mem_write_host_waitrequest : in  std_logic                      := 'X';             -- waitrequest
+			vvp_vfw_debug_av_mm_mem_write_host_burstcount  : out std_logic_vector(4 downto 0);                      -- burstcount
+			vvp_vfw_debug_av_mm_mem_write_host_write       : out std_logic;                                         -- write
+			vvp_vfw_debug_av_mm_mem_write_host_writedata   : out std_logic_vector(127 downto 0);                    -- writedata
+			vvp_vfw_debug_frame_writer_int_irq             : out std_logic                                          -- irq
+		);
+	end component video_path;
+

@@ -1,0 +1,123 @@
+	component csi2_dphy_sys_csi2_tx is
+		port (
+			tx_word_clk_hs_d0         : in  std_logic                     := 'X';             -- clk
+			tx_data_width_hs_d0       : out std_logic_vector(1 downto 0);                     -- TxDataWidthHS
+			tx_data_hs_d0             : out std_logic_vector(15 downto 0);                    -- TxDataHS
+			tx_word_valid_hs_d0       : out std_logic_vector(1 downto 0);                     -- TxWordValidHS
+			tx_eq_active_hs_d0        : out std_logic;                                        -- TxEqActiveHS
+			tx_eq_level_hs_d0         : out std_logic;                                        -- TxEqLevelHS
+			tx_request_hs_d0          : out std_logic;                                        -- TxRequestHS
+			tx_ready_hs_d0            : in  std_logic                     := 'X';             -- TxReadyHS
+			tx_data_transfer_en_hs_d0 : out std_logic;                                        -- TxDataTransferEnHS
+			tx_skew_cal_hs_d0         : out std_logic;                                        -- TxSkewCalHS
+			tx_alternate_cal_hs_d0    : out std_logic;                                        -- TxAlternateCalHS
+			tx_request_esc_d0         : out std_logic;                                        -- TxRequestEsc
+			tx_request_type_esc_d0    : out std_logic_vector(3 downto 0);                     -- TxRequestTypeEsc
+			tx_lpdt_esc_d0            : out std_logic;                                        -- TxLpdtEsc
+			tx_ulps_exit_d0           : out std_logic;                                        -- TxUlpsExit
+			tx_ulps_esc_d0            : out std_logic;                                        -- TxUlpsEsc
+			tx_trigger_esc_d0         : out std_logic_vector(3 downto 0);                     -- TxTriggerEsc
+			tx_data_esc_d0            : out std_logic_vector(7 downto 0);                     -- TxDataEsc
+			tx_valid_esc_d0           : out std_logic;                                        -- TxValidEsc
+			tx_ready_esc_d0           : in  std_logic                     := 'X';             -- TxReadyEsc
+			turn_request_d0           : out std_logic;                                        -- TurnRequest
+			direction_d0              : in  std_logic                     := 'X';             -- Direction
+			turn_disable_d0           : out std_logic;                                        -- TurnDisable
+			force_rx_mode_d0          : out std_logic;                                        -- ForceRxmode
+			force_tx_stop_mode_d0     : out std_logic;                                        -- ForceTxStopmode
+			stop_state_d0             : in  std_logic                     := 'X';             -- Stopstate
+			enable_d0                 : out std_logic;                                        -- Enable
+			alp_mode_d0               : out std_logic;                                        -- AlpMode
+			tx_ulps_clk_d0            : out std_logic;                                        -- TxUlpsClk
+			rx_ulps_clk_not_d0        : in  std_logic                     := 'X';             -- RxUlpsClkNot
+			ulps_active_not_d0        : in  std_logic                     := 'X';             -- UlpsActiveNot
+			tx_hsidle_clk_hs_d0       : out std_logic;                                        -- TxHSIdleClkHS
+			tx_hsidle_clk_ready_hs_d0 : in  std_logic                     := 'X';             -- TxHSIdleClkReadyHS
+			tx_clk_esc_d0             : in  std_logic                     := 'X';             -- clk
+			tx_word_clk_hs_d1         : in  std_logic                     := 'X';             -- clk
+			tx_data_width_hs_d1       : out std_logic_vector(1 downto 0);                     -- TxDataWidthHS
+			tx_data_hs_d1             : out std_logic_vector(15 downto 0);                    -- TxDataHS
+			tx_word_valid_hs_d1       : out std_logic_vector(1 downto 0);                     -- TxWordValidHS
+			tx_eq_active_hs_d1        : out std_logic;                                        -- TxEqActiveHS
+			tx_eq_level_hs_d1         : out std_logic;                                        -- TxEqLevelHS
+			tx_request_hs_d1          : out std_logic;                                        -- TxRequestHS
+			tx_ready_hs_d1            : in  std_logic                     := 'X';             -- TxReadyHS
+			tx_data_transfer_en_hs_d1 : out std_logic;                                        -- TxDataTransferEnHS
+			tx_skew_cal_hs_d1         : out std_logic;                                        -- TxSkewCalHS
+			tx_alternate_cal_hs_d1    : out std_logic;                                        -- TxAlternateCalHS
+			tx_request_esc_d1         : out std_logic;                                        -- TxRequestEsc
+			tx_request_type_esc_d1    : out std_logic_vector(3 downto 0);                     -- TxRequestTypeEsc
+			tx_lpdt_esc_d1            : out std_logic;                                        -- TxLpdtEsc
+			tx_ulps_exit_d1           : out std_logic;                                        -- TxUlpsExit
+			tx_ulps_esc_d1            : out std_logic;                                        -- TxUlpsEsc
+			tx_trigger_esc_d1         : out std_logic_vector(3 downto 0);                     -- TxTriggerEsc
+			tx_data_esc_d1            : out std_logic_vector(7 downto 0);                     -- TxDataEsc
+			tx_valid_esc_d1           : out std_logic;                                        -- TxValidEsc
+			tx_ready_esc_d1           : in  std_logic                     := 'X';             -- TxReadyEsc
+			turn_request_d1           : out std_logic;                                        -- TurnRequest
+			direction_d1              : in  std_logic                     := 'X';             -- Direction
+			turn_disable_d1           : out std_logic;                                        -- TurnDisable
+			force_rx_mode_d1          : out std_logic;                                        -- ForceRxmode
+			force_tx_stop_mode_d1     : out std_logic;                                        -- ForceTxStopmode
+			stop_state_d1             : in  std_logic                     := 'X';             -- Stopstate
+			enable_d1                 : out std_logic;                                        -- Enable
+			alp_mode_d1               : out std_logic;                                        -- AlpMode
+			tx_ulps_clk_d1            : out std_logic;                                        -- TxUlpsClk
+			rx_ulps_clk_not_d1        : in  std_logic                     := 'X';             -- RxUlpsClkNot
+			ulps_active_not_d1        : in  std_logic                     := 'X';             -- UlpsActiveNot
+			tx_hsidle_clk_hs_d1       : out std_logic;                                        -- TxHSIdleClkHS
+			tx_hsidle_clk_ready_hs_d1 : in  std_logic                     := 'X';             -- TxHSIdleClkReadyHS
+			tx_clk_esc_d1             : in  std_logic                     := 'X';             -- clk
+			tx_word_clk_hs_ck         : in  std_logic                     := 'X';             -- clk
+			tx_data_width_hs_ck       : out std_logic_vector(1 downto 0);                     -- TxDataWidthHS
+			tx_data_hs_ck             : out std_logic_vector(15 downto 0);                    -- TxDataHS
+			tx_word_valid_hs_ck       : out std_logic_vector(1 downto 0);                     -- TxWordValidHS
+			tx_eq_active_hs_ck        : out std_logic;                                        -- TxEqActiveHS
+			tx_eq_level_hs_ck         : out std_logic;                                        -- TxEqLevelHS
+			tx_request_hs_ck          : out std_logic;                                        -- TxRequestHS
+			tx_ready_hs_ck            : in  std_logic                     := 'X';             -- TxReadyHS
+			tx_data_transfer_en_hs_ck : out std_logic;                                        -- TxDataTransferEnHS
+			tx_skew_cal_hs_ck         : out std_logic;                                        -- TxSkewCalHS
+			tx_alternate_cal_hs_ck    : out std_logic;                                        -- TxAlternateCalHS
+			tx_request_esc_ck         : out std_logic;                                        -- TxRequestEsc
+			tx_request_type_esc_ck    : out std_logic_vector(3 downto 0);                     -- TxRequestTypeEsc
+			tx_lpdt_esc_ck            : out std_logic;                                        -- TxLpdtEsc
+			tx_ulps_exit_ck           : out std_logic;                                        -- TxUlpsExit
+			tx_ulps_esc_ck            : out std_logic;                                        -- TxUlpsEsc
+			tx_trigger_esc_ck         : out std_logic_vector(3 downto 0);                     -- TxTriggerEsc
+			tx_data_esc_ck            : out std_logic_vector(7 downto 0);                     -- TxDataEsc
+			tx_valid_esc_ck           : out std_logic;                                        -- TxValidEsc
+			tx_ready_esc_ck           : in  std_logic                     := 'X';             -- TxReadyEsc
+			turn_request_ck           : out std_logic;                                        -- TurnRequest
+			direction_ck              : in  std_logic                     := 'X';             -- Direction
+			turn_disable_ck           : out std_logic;                                        -- TurnDisable
+			force_rx_mode_ck          : out std_logic;                                        -- ForceRxmode
+			force_tx_stop_mode_ck     : out std_logic;                                        -- ForceTxStopmode
+			stop_state_ck             : in  std_logic                     := 'X';             -- Stopstate
+			enable_ck                 : out std_logic;                                        -- Enable
+			alp_mode_ck               : out std_logic;                                        -- AlpMode
+			tx_ulps_clk_ck            : out std_logic;                                        -- TxUlpsClk
+			rx_ulps_clk_not_ck        : in  std_logic                     := 'X';             -- RxUlpsClkNot
+			ulps_active_not_ck        : in  std_logic                     := 'X';             -- UlpsActiveNot
+			tx_hsidle_clk_hs_ck       : out std_logic;                                        -- TxHSIdleClkHS
+			tx_hsidle_clk_ready_hs_ck : in  std_logic                     := 'X';             -- TxHSIdleClkReadyHS
+			tx_clk_esc_ck             : in  std_logic                     := 'X';             -- clk
+			axi4s_clk                 : in  std_logic                     := 'X';             -- clk
+			axi4s_rst                 : in  std_logic                     := 'X';             -- reset
+			axi4s_vid_in_0_tdata      : in  std_logic_vector(47 downto 0) := (others => 'X'); -- tdata
+			axi4s_vid_in_0_tvalid     : in  std_logic                     := 'X';             -- tvalid
+			axi4s_vid_in_0_tready     : out std_logic;                                        -- tready
+			axi4s_vid_in_0_tlast      : in  std_logic                     := 'X';             -- tlast
+			axi4s_vid_in_0_tuser      : in  std_logic_vector(5 downto 0)  := (others => 'X'); -- tuser
+			control_write             : in  std_logic                     := 'X';             -- write
+			control_read              : in  std_logic                     := 'X';             -- read
+			control_address           : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- address
+			control_writedata         : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			control_readdata          : out std_logic_vector(31 downto 0);                    -- readdata
+			control_readdatavalid     : out std_logic;                                        -- readdatavalid
+			control_waitrequest       : out std_logic;                                        -- waitrequest
+			control_byteenable        : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
+			control_irq               : out std_logic                                         -- irq
+		);
+	end component csi2_dphy_sys_csi2_tx;
+

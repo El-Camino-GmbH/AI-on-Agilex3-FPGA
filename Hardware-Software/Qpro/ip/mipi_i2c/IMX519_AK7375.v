@@ -1,0 +1,819 @@
+`define IMX519_REG_EXPOSURE_MSB            16'h0202
+`define IMX519_REG_EXPOSURE_LSB            16'h0203
+
+`define IMX519_REG_ANALOG_GAIN_MSB       16'h0204
+`define IMX519_REG_ANALOG_GAIN_LSB       16'h0205
+
+`define IMX519_REG_DIGITAL_GAIN_MSB        16'h020e
+`define IMX519_REG_DIGITAL_GAIN_LSB        16'h020f
+
+`define IMX708_REG_DIG_GAIN_R_MSB          16'h0210
+`define IMX708_REG_DIG_GAIN_R_LSB          16'h0211
+`define IMX708_REG_DIG_GAIN_B_MSB          16'h0212
+`define IMX708_REG_DIG_GAIN_B_LSB          16'h0213
+`define IMX708_REG_DPGA_USE_GLOBAL_GAINB   16'h3ff9  //0: by color, 1: all color
+
+
+`define CMD_CCD_INIT        4'd01  // init. cmd_param0=0 for 1080p; other values are reserved.
+`define CMD_CCD_EXPOSRE     4'd02  // exposure value = cmd_param0,  range:0x0020~0xffbc, defualt:0x3e8
+`define CMD_CCD_ANALOG_GAIN 4'd03  // analog gain value = cmd_param0, range:0x0100~0xffff, defualt:0x0100
+`define CMD_CCD_COLOR_BAL   4'd04  // color balance. blue gain = cmd_param0, red gain = cmd_param1
+
+`define CMD_VCM_ACTIVE      4'd10  // vcm power on
+`define CMD_VCM_STANDBY     4'd11  // vcm power off
+`define CMD_VCM_POS         4'd12  // set vcm pos = param0, range:0~65535
+
+module IMX519_AK7375 (
+    input       CLK_400K,
+    input       reset_n,
+    inout       i2c_clk,
+    inout       i2c_dat,
+
+    //
+    input      [3:0]  cmd,     
+    input      [15:0] cmd_param0, 
+    input      [15:0] cmd_param1, 
+    input             cmd_start,     // rising edge trigger
+    output  reg       cmd_done,   
+    output            cmd_done_err,
+	 
+	//--TEST -- 
+	output reg rcmd_start ,
+	output reg [15:0] CHIP_ID,
+	output reg [7:0]  BYTE ,
+	output reg [7:0]  SLAVE_ADDR , 
+   output reg [7:0]  ST ,
+   output reg [2:0]  CNT,
+	output reg [9:0]  WCNT,
+   output reg [7:0]  W_WORD_DATA  ,
+   output reg [15:0] W_POINTER_REG,
+	
+	output             W_WORD_END ,
+   output reg         W_WORD_GO ,
+	output             W_POINTER_END,
+   output reg         W_POINTER_GO,
+   output R_END,
+   output reg         R_GO,
+   output     [15:0]  R_DATA ,
+	output             SDAO,
+	output reg [23:0]  REG_DATA,
+   output reg [11:0]  VCM_CNT	
+
+);
+
+//wire CLK_400K ; //
+//CLOCKMEM K0(  .RESET_n  (1),  .CLK      (clk50), .CLK_FREQ (250), .CK_1HZ   (CLK_400K) ) ;	
+
+//=======================================================
+//  WIRE /REGISETER 
+//=======================================================
+
+//--I2C Main Controller--- 
+reg  [31:0] DELY;
+
+//-----I2C-BUS-I/O----
+
+wire        W_WORD_SCL; 
+wire        W_WORD_SDAO;  
+wire        W_POINTER_SCL; 
+wire        W_POINTER_SDAO; 
+wire        R_SCL; 
+wire        R_SDAO;  
+
+//reg  [12:0] FAN_RPS;
+//reg  [ 7:0] KTACH
+
+//=======================================================
+//  Parameter  
+//=======================================================
+
+//parameter WRITE_MAX            = 355; 
+
+parameter WRITE_MAX            = 356; 
+
+parameter READ_MAX              = 1; 
+parameter CCD_INIT_start        = 0; 
+
+//parameter CCD_INIT_end          = 357+1; 
+parameter CCD_INIT_end          = 358+1;
+
+parameter CCD_EXPOSRE_start     = 400;
+parameter CCD_EXPOSRE_end       = 401+1;
+parameter CCD_ANALOG_GAIN_start = 500;
+parameter CCD_ANALOG_GAIN_end   = 501+1;
+parameter CCD_COLOR_BAL_start   = 600;
+parameter CCD_COLOR_BAL_end     = 604+1;
+        
+//---CAMERA  
+parameter    SLAVE_ADDR_CAMERA        = 8'h34;
+parameter    P_CHIP_ID                = 16'h0016;
+
+//---VCM-------
+parameter    SLAVE_ADDR_VCM           = 8'h18;
+parameter    P_AK7375_REG_POSITION    = 8'h00;//vcm position 16bitdata
+parameter    P_AK7375_REG_CONT        = 8'h02;//mode
+
+
+parameter    AK7375_MODE_ACTIVE    =8'h00;
+parameter    AK7375_MODE_STANDBY   =8'h40;
+
+
+reg [9:0] WRITE_END ; 
+reg [9:0] WRITE_START ; 
+//------------------------------------
+//=======================================================
+//  Structural coding
+//======================================================= 
+																 
+//--I2C Main Controller--- 
+always @(negedge reset_n or posedge CLK_400K )begin 
+if (!reset_n  ) begin 
+    ST           <=0; //<-------read
+ 	 W_POINTER_GO <=1;
+    R_GO         <=1 ;		 
+	 W_WORD_GO    <=1;
+	 WCNT         <=0;  
+	 CNT          <=0;
+	 DELY         <=0 ; 
+	 rcmd_start   <= cmd_start ; 
+	 cmd_done     <=0;
+	 WRITE_START  <=CCD_INIT_start;
+	 WRITE_END    <=CCD_INIT_end  ;
+end 
+else begin
+rcmd_start <=  cmd_start ; 
+case (ST)
+0: begin 
+    //ST<=30; //---First ,  to do I2C write . 
+    ST<=1; //---First ,  to do I2C read . 
+	 W_POINTER_GO <=1;
+    R_GO  <=1 ;		 
+	 W_WORD_GO <=1;
+	 WCNT <=0;  
+	 CNT  <=0;
+	 DELY <=0 ;
+	 WRITE_START  <=CCD_INIT_start;
+	 WRITE_END    <=CCD_INIT_end  ;
+   end
+//------------- READ -------	
+1: begin 
+    ST<=2; 
+	end	
+2: begin
+        // READ ID
+	          if ( CNT==0)      {SLAVE_ADDR[7:0] ,W_POINTER_REG,BYTE}<= {SLAVE_ADDR_CAMERA[7:0] ,P_CHIP_ID  ,8'h2 };
+	if ( W_POINTER_END ) begin  
+	   W_POINTER_GO  <=0; 
+		ST<=3 ; 
+		DELY<=0;  
+	 end
+	end                
+	//------- Write Pointer
+3: begin 
+    DELY  <=DELY +1;
+    if ( DELY ==2 ) begin 
+      W_POINTER_GO  <=1;
+      ST<=4 ; 
+	 end
+	end       
+4: begin 
+    if  ( W_POINTER_END ) ST<=5 ; 	
+	end              
+5: begin 
+    ST<=6 ; 
+	end 
+	//------- Read DATA  		 
+6: begin 
+	 if ( R_END ) begin  
+	  R_GO  <=0; 
+	  ST<=7 ; 
+	  DELY<=0; 
+	 end
+	end                
+7: begin 
+    DELY  <=DELY +1;
+    if ( DELY ==2 ) begin 	 
+      R_GO  <=1;
+      ST<=8 ; 
+	 end
+	end       
+8: begin 
+     ST<=9 ; 
+	end       
+9: begin 
+   if  ( R_END ) 
+	 begin 		
+	      //READ  
+		        if ( CNT==0) 	CHIP_ID     =R_DATA[15:0];
+	      ST  <=10 ; 
+		   CNT <= CNT +1; 	
+	 end 
+  end	
+10: begin   
+     if ( CNT == READ_MAX) ST  <=11; else  ST<=2; 		
+		  DELY <=0;
+	     W_POINTER_GO <=1;
+        R_GO         <=1 ;		 
+	     W_WORD_GO    <=1; 		    		 		  
+	 end 
+11:begin 
+	    ST            <=20;
+		 cmd_done      <=1;
+end	 
+//----  READ END ----
+
+//----  WRITE----
+20: begin 
+	 ST<=21; 
+    end	
+21: begin 
+	  ST            <= 22; 
+	  WCNT          <= WRITE_START ; 
+	  cmd_done      <=0;
+    end	
+22: begin 
+	  ST            <=31; 
+	 end 
+31: begin 
+        {SLAVE_ADDR ,W_POINTER_REG ,W_WORD_DATA,BYTE} <= { SLAVE_ADDR_CAMERA ,REG_DATA[23:8] ,REG_DATA[7:0],8'h02};
+	     if (  W_WORD_END ) begin  
+	     W_WORD_GO  <=0; 
+		  ST   <=32 ;  
+		  DELY <=0;  
+	 end
+	end           
+32: begin 
+    DELY  <=DELY +1;
+	   if (  DELY ==5 )  begin
+        W_WORD_GO  <=1;
+        ST<=33 ; 
+	 end
+	 
+	end       
+33: begin 
+    ST<=34 ; 
+	end       	
+34: begin 
+     if  ( W_WORD_END )  begin 	
+			 WCNT<=WCNT+1 ;			 
+			 ST  <=35 ; 
+	  end
+	end              
+35: begin 
+    if ( WCNT != WRITE_END ) ST<=22 ;else ST <= 36; 
+	 end 
+36: begin
+	    ST <=37; 
+	 end 
+37: begin 
+       cmd_done  <= 1 ;
+		 ST        <= 40;
+	 end  
+// -next
+40: begin 
+	    if (!rcmd_start & cmd_start )  begin 
+		           if ( cmd==`CMD_CCD_INIT       ) begin  WCNT <= CCD_INIT_start;        WRITE_END   <=CCD_INIT_end ;      ST<=22;end 
+		      else if ( cmd==`CMD_CCD_EXPOSRE    ) begin  WCNT <= CCD_EXPOSRE_start;     WRITE_END   <=CCD_EXPOSRE_end;     ST<=22;end 
+		      else if ( cmd==`CMD_CCD_ANALOG_GAIN) begin  WCNT <= CCD_ANALOG_GAIN_start; WRITE_END   <=CCD_ANALOG_GAIN_end; ST<=22;end 
+		      else if ( cmd==`CMD_CCD_COLOR_BAL  ) begin  WCNT <= CCD_COLOR_BAL_start;   WRITE_END   <=CCD_COLOR_BAL_end;   ST<=22;end 
+		      else if ( cmd==`CMD_VCM_ACTIVE     ) begin  WCNT <= 0;   WRITE_END   <=1;   ST<=41;end 
+		      else if ( cmd==`CMD_VCM_STANDBY    ) begin  WCNT <= 1;   WRITE_END   <=2;   ST<=41;end 
+		      else if ( cmd==`CMD_VCM_POS        ) begin  WCNT <= 2;   WRITE_END   <=3;   ST<=41;end 
+		      cmd_done   <=0;
+	  end
+    end	
+	 	 
+41: begin 
+             if (WCNT==0) {SLAVE_ADDR ,W_POINTER_REG[15:0] ,BYTE}                   <= { SLAVE_ADDR_VCM ,    P_AK7375_REG_CONT[7:0] ,AK7375_MODE_ACTIVE[7:0], 8'h01};
+        else if (WCNT==1) {SLAVE_ADDR ,W_POINTER_REG[15:0] ,BYTE}                   <= { SLAVE_ADDR_VCM ,    P_AK7375_REG_CONT[7:0] ,AK7375_MODE_STANDBY[7:0], 8'h01};
+        else if (WCNT==2) {SLAVE_ADDR ,W_POINTER_REG[15:0] ,W_WORD_DATA[7:0], BYTE} <= { SLAVE_ADDR_VCM ,P_AK7375_REG_POSITION[7:0] ,cmd_param0[11:0],4'h0, 8'h02};
+	     if (  W_WORD_END ) begin  
+	     W_WORD_GO  <=0; 
+		  ST   <=42 ;  
+		  DELY <=0;  
+	 end
+	end           
+42: begin 
+    DELY  <=DELY +1;
+	   if (  DELY ==5 )  begin
+        W_WORD_GO  <=1;
+        ST<=43 ; 
+	 end
+	 
+	end       
+43: begin 
+    ST<=44 ; 
+	end       	
+44: begin 
+     if  ( W_WORD_END )  begin 	
+			 WCNT<=WCNT+1 ;			 
+			 ST  <=45 ; 
+	  end
+	end              
+45: begin 
+    if ( WCNT != WRITE_END ) ST <= 41 ; 	  
+	 else  
+		begin 
+	         ST       <= 40; 
+				cmd_done <= 1 ;
+	   end 
+	 end 
+endcase
+end
+end
+//-----------------------------MAIN-ST END ------------------------------------------
+
+//============inout  i2c  q15(a10) example ===============  
+// wire const_zero_sig /* synthesis keep */;
+// assign const_zero_sig = 1\'b0;
+// assign TRI_PIN = enable? const_zero_sig : \'bz;
+//========================================================
+wire   const_zero_sig/* synthesis keep */ ; 
+assign const_zero_sig = 0 ; 
+assign i2c_dat        = (SDAO)?1'bz :const_zero_sig;
+assign i2c_clk        = W_POINTER_SCL  & R_SCL   & W_WORD_SCL;
+assign SDAO           = W_POINTER_SDAO & R_SDAO  & W_WORD_SDAO;
+
+
+//==== I2C WRITE WORD ===
+I2C_WRITE  I2C_WRITE_i(
+   .BYTE_NUM     ( BYTE   ),
+   .RESET_N      ( reset_n),
+	.PT_CK        ( CLK_400K),
+	.GO           ( W_WORD_GO),
+	.POINTER      ( W_POINTER_REG),
+   .WDATA	     ( W_WORD_DATA),
+	.SLAVE_ADDRESS( SLAVE_ADDR ),
+	.SDAI         ( i2c_dat),
+	.SDAO         ( W_WORD_SDAO),
+	.SCLO         ( W_WORD_SCL ),
+	.END_OK       ( W_WORD_END)
+);
+
+//==== I2C WRITE POINTER ===
+I2C_WRITE_POINTER  I2C_WRITE_POINTER_i(
+   .RESET_N      (reset_n   ),
+	.PT_CK        ( CLK_400K ),
+	.GO           ( W_POINTER_GO ),
+	.POINTER      ( W_POINTER_REG),
+	.SLAVE_ADDRESS( SLAVE_ADDR ),
+	.SDAI         ( i2c_dat    ),
+	.SDAO         ( W_POINTER_SDAO),
+	.SCLO         ( W_POINTER_SCL ),
+	.END_OK       ( W_POINTER_END )
+);
+//-----I2C TO READ---- 
+I2C_READ_DATA I2C_READ_DATA_i( 
+   .RESET_N      ( reset_n    ),
+	.PT_CK        ( CLK_400K   ),
+	.GO           ( R_GO       ),
+	.SLAVE_ADDRESS( SLAVE_ADDR ),
+ 	.BYTE_NUM     ( BYTE       ) , // I2C read 8 bit data 
+	.SDAI         ( i2c_dat),
+	.SDAO         ( R_SDAO ),
+	.SCLO         ( R_SCL  ),
+	.END_OK       ( R_END  ),
+	.DATA         ( R_DATA )
+);	
+	
+always @(WCNT)
+case (WCNT) 
+000:REG_DATA<={16'h0136, 8'h18};//1. common setting
+001:REG_DATA<={16'h0137, 8'h00};//
+002:REG_DATA<={16'h3c7e, 8'h01};//
+003:REG_DATA<={16'h3c7f, 8'h07};//
+004:REG_DATA<={16'h3020, 8'h00};//
+005:REG_DATA<={16'h3e35, 8'h01};//
+006:REG_DATA<={16'h3f7f, 8'h01};//
+007:REG_DATA<={16'h5609, 8'h57};//
+008:REG_DATA<={16'h5613, 8'h51};//
+009:REG_DATA<={16'h561f, 8'h5e};//
+010:REG_DATA<={16'h5623, 8'hd2};//
+011:REG_DATA<={16'h5637, 8'h11};//
+012:REG_DATA<={16'h5657, 8'h11};//
+013:REG_DATA<={16'h5659, 8'h12};//
+014:REG_DATA<={16'h5733, 8'h60};//
+015:REG_DATA<={16'h5905, 8'h57};//
+016:REG_DATA<={16'h590f, 8'h51};//
+017:REG_DATA<={16'h591b, 8'h5e};//
+018:REG_DATA<={16'h591f, 8'hd2};//
+019:REG_DATA<={16'h5933, 8'h11};//
+020:REG_DATA<={16'h5953, 8'h11};//
+021:REG_DATA<={16'h5955, 8'h12};//
+022:REG_DATA<={16'h5a2f, 8'h60};//
+023:REG_DATA<={16'h5a85, 8'h57};//
+024:REG_DATA<={16'h5a8f, 8'h51};//
+025:REG_DATA<={16'h5a9b, 8'h5e};//
+026:REG_DATA<={16'h5a9f, 8'hd2};//
+027:REG_DATA<={16'h5ab3, 8'h11};//
+028:REG_DATA<={16'h5ad3, 8'h11};//
+029:REG_DATA<={16'h5ad5, 8'h12};//
+030:REG_DATA<={16'h5baf, 8'h60};//
+031:REG_DATA<={16'h5c15, 8'h2a};//
+032:REG_DATA<={16'h5c17, 8'h80};//
+033:REG_DATA<={16'h5c19, 8'h31};//
+034:REG_DATA<={16'h5c1b, 8'h87};//
+035:REG_DATA<={16'h5c25, 8'h25};//
+036:REG_DATA<={16'h5c27, 8'h7b};//
+037:REG_DATA<={16'h5c29, 8'h2a};//
+038:REG_DATA<={16'h5c2b, 8'h80};//
+039:REG_DATA<={16'h5c2d, 8'h31};//
+040:REG_DATA<={16'h5c2f, 8'h87};//
+041:REG_DATA<={16'h5c35, 8'h2b};//
+042:REG_DATA<={16'h5c37, 8'h81};//
+043:REG_DATA<={16'h5c39, 8'h31};//
+044:REG_DATA<={16'h5c3b, 8'h87};//
+045:REG_DATA<={16'h5c45, 8'h25};//
+046:REG_DATA<={16'h5c47, 8'h7b};//
+047:REG_DATA<={16'h5c49, 8'h2a};//
+048:REG_DATA<={16'h5c4b, 8'h80};//
+049:REG_DATA<={16'h5c4d, 8'h31};//
+050:REG_DATA<={16'h5c4f, 8'h87};//
+051:REG_DATA<={16'h5c55, 8'h2d};//
+052:REG_DATA<={16'h5c57, 8'h83};//
+053:REG_DATA<={16'h5c59, 8'h32};//
+054:REG_DATA<={16'h5c5b, 8'h88};//
+055:REG_DATA<={16'h5c65, 8'h29};//
+056:REG_DATA<={16'h5c67, 8'h7f};//
+057:REG_DATA<={16'h5c69, 8'h2e};//
+058:REG_DATA<={16'h5c6b, 8'h84};//
+059:REG_DATA<={16'h5c6d, 8'h32};//
+060:REG_DATA<={16'h5c6f, 8'h88};//
+061:REG_DATA<={16'h5e69, 8'h04};//
+062:REG_DATA<={16'h5e9d, 8'h00};//
+063:REG_DATA<={16'h5f18, 8'h10};//
+064:REG_DATA<={16'h5f1a, 8'h0e};//
+065:REG_DATA<={16'h5f20, 8'h12};//
+066:REG_DATA<={16'h5f22, 8'h10};//
+067:REG_DATA<={16'h5f24, 8'h0e};//
+068:REG_DATA<={16'h5f28, 8'h10};//
+069:REG_DATA<={16'h5f2a, 8'h0e};//
+070:REG_DATA<={16'h5f30, 8'h12};//
+071:REG_DATA<={16'h5f32, 8'h10};//
+072:REG_DATA<={16'h5f34, 8'h0e};//
+073:REG_DATA<={16'h5f38, 8'h0f};//
+074:REG_DATA<={16'h5f39, 8'h0d};//
+075:REG_DATA<={16'h5f3c, 8'h11};//
+076:REG_DATA<={16'h5f3d, 8'h0f};//
+077:REG_DATA<={16'h5f3e, 8'h0d};//
+078:REG_DATA<={16'h5f61, 8'h07};//
+079:REG_DATA<={16'h5f64, 8'h05};//
+080:REG_DATA<={16'h5f67, 8'h03};//
+081:REG_DATA<={16'h5f6a, 8'h03};//
+082:REG_DATA<={16'h5f6d, 8'h07};//
+083:REG_DATA<={16'h5f70, 8'h07};//
+084:REG_DATA<={16'h5f73, 8'h05};//
+085:REG_DATA<={16'h5f76, 8'h02};//
+086:REG_DATA<={16'h5f79, 8'h07};//
+087:REG_DATA<={16'h5f7c, 8'h07};//
+088:REG_DATA<={16'h5f7f, 8'h07};//
+089:REG_DATA<={16'h5f82, 8'h07};//
+090:REG_DATA<={16'h5f85, 8'h03};//
+091:REG_DATA<={16'h5f88, 8'h02};//
+092:REG_DATA<={16'h5f8b, 8'h01};//
+093:REG_DATA<={16'h5f8e, 8'h01};//
+094:REG_DATA<={16'h5f91, 8'h04};//
+095:REG_DATA<={16'h5f94, 8'h05};//
+096:REG_DATA<={16'h5f97, 8'h02};//
+097:REG_DATA<={16'h5f9d, 8'h07};//
+098:REG_DATA<={16'h5fa0, 8'h07};//
+099:REG_DATA<={16'h5fa3, 8'h07};//
+100:REG_DATA<={16'h5fa6, 8'h07};//
+101:REG_DATA<={16'h5fa9, 8'h03};//
+102:REG_DATA<={16'h5fac, 8'h01};//
+103:REG_DATA<={16'h5faf, 8'h01};//
+104:REG_DATA<={16'h5fb5, 8'h03};//
+105:REG_DATA<={16'h5fb8, 8'h02};//
+106:REG_DATA<={16'h5fbb, 8'h01};//
+107:REG_DATA<={16'h5fc1, 8'h07};//
+108:REG_DATA<={16'h5fc4, 8'h07};//
+109:REG_DATA<={16'h5fc7, 8'h07};//
+110:REG_DATA<={16'h5fd1, 8'h00};//
+111:REG_DATA<={16'h6302, 8'h79};//
+112:REG_DATA<={16'h6305, 8'h78};//
+113:REG_DATA<={16'h6306, 8'ha5};//
+114:REG_DATA<={16'h6308, 8'h03};//
+115:REG_DATA<={16'h6309, 8'h20};//
+116:REG_DATA<={16'h630b, 8'h0a};//
+117:REG_DATA<={16'h630d, 8'h48};//
+118:REG_DATA<={16'h630f, 8'h06};//
+119:REG_DATA<={16'h6311, 8'ha4};//
+120:REG_DATA<={16'h6313, 8'h03};//
+121:REG_DATA<={16'h6314, 8'h20};//
+122:REG_DATA<={16'h6316, 8'h0a};//
+123:REG_DATA<={16'h6317, 8'h31};//
+124:REG_DATA<={16'h6318, 8'h4a};//
+125:REG_DATA<={16'h631a, 8'h06};//
+126:REG_DATA<={16'h631b, 8'h40};//
+127:REG_DATA<={16'h631c, 8'ha4};//
+128:REG_DATA<={16'h631e, 8'h03};//
+129:REG_DATA<={16'h631f, 8'h20};//
+130:REG_DATA<={16'h6321, 8'h0a};//
+131:REG_DATA<={16'h6323, 8'h4a};//
+132:REG_DATA<={16'h6328, 8'h80};//
+133:REG_DATA<={16'h6329, 8'h01};//
+134:REG_DATA<={16'h632a, 8'h30};//
+135:REG_DATA<={16'h632b, 8'h02};//
+136:REG_DATA<={16'h632c, 8'h20};//
+137:REG_DATA<={16'h632d, 8'h02};//
+138:REG_DATA<={16'h632e, 8'h30};//
+139:REG_DATA<={16'h6330, 8'h60};//
+140:REG_DATA<={16'h6332, 8'h90};//
+141:REG_DATA<={16'h6333, 8'h01};//
+142:REG_DATA<={16'h6334, 8'h30};//
+143:REG_DATA<={16'h6335, 8'h02};//
+144:REG_DATA<={16'h6336, 8'h20};//
+145:REG_DATA<={16'h6338, 8'h80};//
+146:REG_DATA<={16'h633a, 8'ha0};//
+147:REG_DATA<={16'h633b, 8'h01};//
+148:REG_DATA<={16'h633c, 8'h60};//
+149:REG_DATA<={16'h633d, 8'h02};//
+150:REG_DATA<={16'h633e, 8'h60};//
+151:REG_DATA<={16'h633f, 8'h01};//
+152:REG_DATA<={16'h6340, 8'h30};//
+153:REG_DATA<={16'h6341, 8'h02};//
+154:REG_DATA<={16'h6342, 8'h20};//
+155:REG_DATA<={16'h6343, 8'h03};//
+156:REG_DATA<={16'h6344, 8'h80};//
+157:REG_DATA<={16'h6345, 8'h03};//
+158:REG_DATA<={16'h6346, 8'h90};//
+159:REG_DATA<={16'h6348, 8'hf0};//
+160:REG_DATA<={16'h6349, 8'h01};//
+161:REG_DATA<={16'h634a, 8'h20};//
+162:REG_DATA<={16'h634b, 8'h02};//
+163:REG_DATA<={16'h634c, 8'h10};//
+164:REG_DATA<={16'h634d, 8'h03};//
+165:REG_DATA<={16'h634e, 8'h60};//
+166:REG_DATA<={16'h6350, 8'ha0};//
+167:REG_DATA<={16'h6351, 8'h01};//
+168:REG_DATA<={16'h6352, 8'h60};//
+169:REG_DATA<={16'h6353, 8'h02};//
+170:REG_DATA<={16'h6354, 8'h50};//
+171:REG_DATA<={16'h6355, 8'h02};//
+172:REG_DATA<={16'h6356, 8'h60};//
+173:REG_DATA<={16'h6357, 8'h01};//
+174:REG_DATA<={16'h6358, 8'h30};//
+175:REG_DATA<={16'h6359, 8'h02};//
+176:REG_DATA<={16'h635a, 8'h30};//
+177:REG_DATA<={16'h635b, 8'h03};//
+178:REG_DATA<={16'h635c, 8'h90};//
+179:REG_DATA<={16'h635f, 8'h01};//
+180:REG_DATA<={16'h6360, 8'h10};//
+181:REG_DATA<={16'h6361, 8'h01};//
+182:REG_DATA<={16'h6362, 8'h40};//
+183:REG_DATA<={16'h6363, 8'h02};//
+184:REG_DATA<={16'h6364, 8'h50};//
+185:REG_DATA<={16'h6368, 8'h70};//
+186:REG_DATA<={16'h636a, 8'ha0};//
+187:REG_DATA<={16'h636b, 8'h01};//
+188:REG_DATA<={16'h636c, 8'h50};//
+189:REG_DATA<={16'h637d, 8'he4};//
+190:REG_DATA<={16'h637e, 8'hb4};//
+191:REG_DATA<={16'h638c, 8'h8e};//
+192:REG_DATA<={16'h638d, 8'h38};//
+193:REG_DATA<={16'h638e, 8'he3};//
+194:REG_DATA<={16'h638f, 8'h4c};//
+195:REG_DATA<={16'h6390, 8'h30};//
+196:REG_DATA<={16'h6391, 8'hc3};//
+197:REG_DATA<={16'h6392, 8'hae};//
+198:REG_DATA<={16'h6393, 8'hba};//
+199:REG_DATA<={16'h6394, 8'heb};//
+200:REG_DATA<={16'h6395, 8'h6e};//
+201:REG_DATA<={16'h6396, 8'h34};//
+202:REG_DATA<={16'h6397, 8'he3};//
+203:REG_DATA<={16'h6398, 8'hcf};//
+204:REG_DATA<={16'h6399, 8'h3c};//
+205:REG_DATA<={16'h639a, 8'hf3};//
+206:REG_DATA<={16'h639b, 8'h0c};//
+207:REG_DATA<={16'h639c, 8'h30};//
+208:REG_DATA<={16'h639d, 8'hc1};//
+209:REG_DATA<={16'h63b9, 8'ha3};//
+210:REG_DATA<={16'h63ba, 8'hfe};//
+211:REG_DATA<={16'h7600, 8'h01};//
+212:REG_DATA<={16'h79a0, 8'h01};//
+213:REG_DATA<={16'h79a1, 8'h01};//
+214:REG_DATA<={16'h79a2, 8'h01};//
+215:REG_DATA<={16'h79a3, 8'h01};//
+216:REG_DATA<={16'h79a4, 8'h01};//
+217:REG_DATA<={16'h79a5, 8'h20};//
+218:REG_DATA<={16'h79a9, 8'h00};//
+219:REG_DATA<={16'h79aa, 8'h01};//
+220:REG_DATA<={16'h79ad, 8'h00};//
+221:REG_DATA<={16'h79af, 8'h00};//
+222:REG_DATA<={16'h8173, 8'h01};//
+223:REG_DATA<={16'h835c, 8'h01};//
+224:REG_DATA<={16'h8a74, 8'h01};//
+225:REG_DATA<={16'h8c1f, 8'h00};//
+226:REG_DATA<={16'h8c27, 8'h00};//
+227:REG_DATA<={16'h8c3b, 8'h03};//
+228:REG_DATA<={16'h9004, 8'h0b};//
+229:REG_DATA<={16'h920c, 8'h6a};//
+230:REG_DATA<={16'h920d, 8'h22};//
+231:REG_DATA<={16'h920e, 8'h6a};//
+232:REG_DATA<={16'h920f, 8'h23};//
+233:REG_DATA<={16'h9214, 8'h6a};//
+234:REG_DATA<={16'h9215, 8'h20};//
+235:REG_DATA<={16'h9216, 8'h6a};//
+236:REG_DATA<={16'h9217, 8'h21};//
+237:REG_DATA<={16'h9385, 8'h3e};//
+238:REG_DATA<={16'h9387, 8'h1b};//
+239:REG_DATA<={16'h938d, 8'h4d};//
+240:REG_DATA<={16'h938f, 8'h43};//
+241:REG_DATA<={16'h9391, 8'h1b};//
+242:REG_DATA<={16'h9395, 8'h4d};//
+243:REG_DATA<={16'h9397, 8'h43};//
+244:REG_DATA<={16'h9399, 8'h1b};//
+245:REG_DATA<={16'h939d, 8'h3e};//
+246:REG_DATA<={16'h939f, 8'h2f};//
+247:REG_DATA<={16'h93a5, 8'h43};//
+248:REG_DATA<={16'h93a7, 8'h2f};//
+249:REG_DATA<={16'h93a9, 8'h2f};//
+250:REG_DATA<={16'h93ad, 8'h34};//
+251:REG_DATA<={16'h93af, 8'h2f};//
+252:REG_DATA<={16'h93b5, 8'h3e};  
+253:REG_DATA<={16'h93b7, 8'h2f};				
+254:REG_DATA<={16'h93bd, 8'h4d};				
+255:REG_DATA<={16'h93bf, 8'h43};           
+256:REG_DATA<={16'h93c1, 8'h2f};           
+257:REG_DATA<={16'h93c5, 8'h4d};           
+258:REG_DATA<={16'h93c7, 8'h43};           
+259:REG_DATA<={16'h93c9, 8'h2f};           
+260:REG_DATA<={16'h974b, 8'h02}; 
+261:REG_DATA<={16'h995c, 8'h8c}; 
+262:REG_DATA<={16'h995d, 8'h00}; 
+263:REG_DATA<={16'h995e, 8'h00}; 
+264:REG_DATA<={16'h9963, 8'h64}; 
+265:REG_DATA<={16'h9964, 8'h50}; 
+266:REG_DATA<={16'haa0a, 8'h26}; 
+267:REG_DATA<={16'hae03, 8'h04}; 
+268:REG_DATA<={16'hae04, 8'h03}; 
+269:REG_DATA<={16'hae05, 8'h03}; 
+270:REG_DATA<={16'hbc1c, 8'h08}; 
+271:REG_DATA<={16'hbcf1, 8'h02}; 
+272:REG_DATA<={16'h0111, 8'h02};/* 2. 1080p 60fps mode */
+273:REG_DATA<={16'h0112, 8'h0a};
+274:REG_DATA<={16'h0113, 8'h0a};
+275:REG_DATA<={16'h0114, 8'h01};
+276:REG_DATA<={16'h0342, 8'h17};
+277:REG_DATA<={16'h0343, 8'h8b};
+278:REG_DATA<={16'h0340, 8'h04};
+279:REG_DATA<={16'h0341, 8'h9c};
+280:REG_DATA<={16'h0344, 8'h01};
+281:REG_DATA<={16'h0345, 8'h98};
+282:REG_DATA<={16'h0346, 8'h02};
+283:REG_DATA<={16'h0347, 8'ha2};
+284:REG_DATA<={16'h0348, 8'h10};
+285:REG_DATA<={16'h0349, 8'h97};
+286:REG_DATA<={16'h034a, 8'h0b};
+287:REG_DATA<={16'h034b, 8'h15};
+288:REG_DATA<={16'h0220, 8'h00};
+289:REG_DATA<={16'h0221, 8'h11};
+290:REG_DATA<={16'h0222, 8'h01};
+291:REG_DATA<={16'h0900, 8'h01};
+292:REG_DATA<={16'h0901, 8'h22};
+293:REG_DATA<={16'h0902, 8'h0a};
+294:REG_DATA<={16'h3f4c, 8'h01};
+295:REG_DATA<={16'h3f4d, 8'h01};
+296:REG_DATA<={16'h4254, 8'h7f};
+297:REG_DATA<={16'h0401, 8'h00};
+298:REG_DATA<={16'h0404, 8'h00};
+299:REG_DATA<={16'h0405, 8'h10};
+300:REG_DATA<={16'h0408, 8'h00};
+301:REG_DATA<={16'h0409, 8'h00};
+302:REG_DATA<={16'h040a, 8'h00};
+303:REG_DATA<={16'h040b, 8'h00};
+304:REG_DATA<={16'h040c, 8'h07};
+305:REG_DATA<={16'h040d, 8'h80};
+306:REG_DATA<={16'h040e, 8'h04};
+307:REG_DATA<={16'h040f, 8'h38};
+308:REG_DATA<={16'h034c, 8'h07};
+309:REG_DATA<={16'h034d, 8'h80};
+310:REG_DATA<={16'h034e, 8'h04};
+311:REG_DATA<={16'h034f, 8'h38};
+312:REG_DATA<={16'h0301, 8'h06};
+313:REG_DATA<={16'h0303, 8'h04};
+314:REG_DATA<={16'h0305, 8'h06};
+315:REG_DATA<={16'h0306, 8'h01};
+316:REG_DATA<={16'h0307, 8'h40};
+317:REG_DATA<={16'h0309, 8'h0a};
+318:REG_DATA<={16'h030b, 8'h02};
+319:REG_DATA<={16'h030d, 8'h04};
+320:REG_DATA<={16'h030e, 8'h01};
+321:REG_DATA<={16'h030f, 8'h10};
+322:REG_DATA<={16'h0310, 8'h01};
+323:REG_DATA<={16'h0820, 8'h0a};
+324:REG_DATA<={16'h0821, 8'h20};
+325:REG_DATA<={16'h0822, 8'h00};
+326:REG_DATA<={16'h0823, 8'h00};
+327:REG_DATA<={16'h3e20, 8'h01};
+328:REG_DATA<={16'h3e37, 8'h00};
+329:REG_DATA<={16'h3e3b, 8'h00};
+330:REG_DATA<={16'h0106, 8'h00};
+331:REG_DATA<={16'h0b00, 8'h00};
+332:REG_DATA<={16'h3230, 8'h00};
+333:REG_DATA<={16'h3f14, 8'h01};
+334:REG_DATA<={16'h3f3c, 8'h01};
+335:REG_DATA<={16'h3f0d, 8'h0a};
+336:REG_DATA<={16'h3fbc, 8'h00};
+337:REG_DATA<={16'h3c06, 8'h00};
+338:REG_DATA<={16'h3c07, 8'h48};
+339:REG_DATA<={16'h3c0a, 8'h00};
+340:REG_DATA<={16'h3c0b, 8'h00};
+341:REG_DATA<={16'h3f78, 8'h00};
+342:REG_DATA<={16'h3f79, 8'h40};
+343:REG_DATA<={16'h3f7c, 8'h00};
+344:REG_DATA<={16'h3f7d, 8'h00};
+345:REG_DATA<={16'h030E, 8'h01};//3. 450MHz link frequency
+346:REG_DATA<={16'h030F, 8'h2c};
+347:REG_DATA<={16'h0202, 8'h27};//4. EXPOSURE iMX519_REG_EXPOSURE 10000
+348:REG_DATA<={16'h0203, 8'h10}; 
+
+349:REG_DATA<={16'h3ff9, 8'h01};//1: all color
+350:REG_DATA<={16'h020e, 8'h01};//r gloab grain
+351:REG_DATA<={16'h020f, 8'h00};	
+
+352:REG_DATA<={16'h3ff9, 8'h00};//0: by color,
+353:REG_DATA<={16'h0212, 8'h01};//blue grain
+354:REG_DATA<={16'h0213, 8'h00};
+355:REG_DATA<={16'h0210, 8'h01};//red gain
+356:REG_DATA<={16'h0211, 8'h00};	
+
+357:REG_DATA<={16'h0101, 8'h00}; 
+358:REG_DATA<={16'h0100, 8'h01};
+
+//357:REG_DATA<={16'h0100, 8'h01};//5. Start steam: write 8-bit value 0x01 (IMX519_MODE_STREAMING) to 16 bit register 0x0100 (IMX519_REG_MODE_SELECT) //IMX519_REG_MODE_SELECT: IMX519_MODE_STREAMING
+
+
+
+//// digital gain for all channel: set IMX708_REG_DPGA_USE_GLOBAL_GAINB = 1 first, then set below one 16-bit register
+//`define IMX519_REG_DIGITAL_GAIN_MSB        16'h020e
+//`define IMX519_REG_DIGITAL_GAIN_LSB        16'h020f
+//
+//// for color balance, set IMX708_REG_DPGA_USE_GLOBAL_GAINB = 0 first, then set below four 16-bit register
+//// recomment to keep IMX708_REG_DIG_GAIN_GR and IMX708_REG_DIG_GAIN_GR as 0x0100, and change IMX708_REG_DIG_GAIN_R and IMX708_REG_DIG_GAIN_B
+//`define IMX708_REG_DIG_GAIN_GR_MSB         16'h020e
+//`define IMX708_REG_DIG_GAIN_GR_LSB         16'h020f
+//`define IMX708_REG_DIG_GAIN_R_MSB          16'h0210
+//`define IMX708_REG_DIG_GAIN_R_LSB          16'h0211
+//`define IMX708_REG_DIG_GAIN_B_MSB          16'h0212
+//`define IMX708_REG_DIG_GAIN_B_LSB          16'h0213
+//`define IMX708_REG_DIG_GAIN_GB_MSB         16'h0214
+//`define IMX708_REG_DIG_GAIN_GB_LSB         16'h0215
+//`define IMX708_REG_DPGA_USE_GLOBAL_GAINB   16'h3ff9  //0: by color, 1: all color
+
+
+
+//------EXPOSURE ADJ------
+400:REG_DATA<={`IMX519_REG_EXPOSURE_MSB   ,       cmd_param0[15:8]};
+401:REG_DATA<={`IMX519_REG_EXPOSURE_LSB   ,       cmd_param0[7:0 ]}; 
+
+//------ANALOG_GAIN_ADJ------
+500:REG_DATA<={`IMX519_REG_ANALOG_GAIN_MSB,       cmd_param0[15:8]};//ANALOG_GAIN_ADJ
+501:REG_DATA<={`IMX519_REG_ANALOG_GAIN_LSB,       cmd_param0[7:0 ]};//
+
+//------Color Balance_ADJ------
+600:REG_DATA<={`IMX708_REG_DPGA_USE_GLOBAL_GAINB,            8'h00};//Color Balance_ADJ  0: by color, 1: all color  // Color Balance, blue 0x0213, red 0x1BC
+601:REG_DATA<={`IMX708_REG_DIG_GAIN_R_MSB,        cmd_param1[15:8]};//red grain
+602:REG_DATA<={`IMX708_REG_DIG_GAIN_R_LSB,        cmd_param1[7:0 ]};
+603:REG_DATA<={`IMX708_REG_DIG_GAIN_B_MSB,        cmd_param0[15:8]};//blue gain
+604:REG_DATA<={`IMX708_REG_DIG_GAIN_B_LSB,        cmd_param0[7:0 ]};	
+
+
+endcase 	
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

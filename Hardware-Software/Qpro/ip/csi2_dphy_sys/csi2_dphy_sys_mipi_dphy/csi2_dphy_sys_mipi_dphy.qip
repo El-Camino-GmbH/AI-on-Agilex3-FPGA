@@ -1,0 +1,145 @@
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TOP_LEVEL_COMPONENT_NAME "mipi_dphy"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name OCS_IP_FILE [file join $::quartus(qip_path) "../csi2_dphy_sys_mipi_dphy.ip"]
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name OCS_IP_TYPE "mipi_dphy"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name OCS_IP_VERSION "6.1.0"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name OCS_IP_HASH "awu3why"
+set_global_assignment -library "csi2_dphy_sys_mipi_dphy" -name SOPCINFO_FILE [file join $::quartus(qip_path) "csi2_dphy_sys_mipi_dphy.sopcinfo"]
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name SLD_INFO "QSYS_NAME csi2_dphy_sys_mipi_dphy HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "csi2_dphy_sys_mipi_dphy" -name MISC_FILE [file join $::quartus(qip_path) "csi2_dphy_sys_mipi_dphy.cmp"]
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TARGETED_PART_TRAIT "part.DEVICE_TEMPERATURE_GRADE::EXTENDED"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TARGETED_PART_TRAIT "part.DEVICE_POWER_MODEL::STANDARD_POWER_FIXED"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TARGETED_PART_TRAIT "part.SUPPORTS_VID::0"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_TARGETED_PART_TRAIT "part.DEVICE_IOBANK_REVISION::IO96B_REVB1"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "csi2_dphy_sys_mipi_dphy" -name MISC_FILE [file join $::quartus(qip_path) "../csi2_dphy_sys_mipi_dphy.ip"]
+
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19taXBpX2RwaHlfZHBoeV9hcmNoX2ZwXzYxMF92Z3hzeXlh"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_DISPLAY_NAME "TUlQSSBEUEhZIElQIEZQ"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_VERSION "Ni4xLjA="
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_DESCRIPTION "TUlQSSBEUEhZIElQIEZQ"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_GROUP "TWVtb3J5IEludGVyZmFjZXMgYW5kIENvbnRyb2xsZXJz"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3N1cHBvcnQvcHJvZ3JhbW1hYmxlL3N1cHBvcnQtcmVzb3VyY2VzL2d1aWRlZC1qb3VybmV5L2FnaWxleDUvaW50ZXJmYWNlLXByb3RvY29sLmh0bWw="
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19taXBpX2RwaHlfbWlwaV9kcGh5XzYxMF9hd3Uzd2h5"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_DISPLAY_NAME "TUlQSSBEUEhZIElQ"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_VERSION "Ni4xLjA="
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_DESCRIPTION "TUlQSSBEUEhZIElQ"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_GROUP "SW50ZXJmYWNlIFByb3RvY29scy9BdWRpbyAmIFZpZGVv"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3N1cHBvcnQvcHJvZ3JhbW1hYmxlL3N1cHBvcnQtcmVzb3VyY2VzL2d1aWRlZC1qb3VybmV5L2FnaWxleDUvaW50ZXJmYWNlLXByb3RvY29sLmh0bWw="
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19taXBpX2RwaHk="
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy" -library "csi2_dphy_sys_mipi_dphy" -name IP_COMPONENT_VERSION "MS4w"
+
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_PIN_GROUP_NAME octrzq -to "rzq"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD 1.2V -to "rzq"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_dp[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_dn[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_dp[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_dn[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_dp[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_dn[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_dp[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_dn[0]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_dp[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_dn[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_dp[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_dn[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_dp[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_dn[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_dp[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_dn[1]"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_cp"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name RZQ_GROUP octrzq -to "LINK0_dphy_link_cn"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_cp"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PIN_VCCIO 1.2V -to "LINK0_dphy_link_cn"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_cp"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD DPHY -to "LINK0_dphy_link_cn"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_cp"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name INPUT_TERMINATION DIFFERENTIAL -to "LINK0_dphy_link_cn"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_RELATIVE_LOCATION_ASSIGNMENT BYTE-6 -to *dphy_core_inst|dphy_link[0].dphy_link_used.io_blk_inst|byte_in_link[0].byte_wrap_inst|byte_inst
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_RELATIVE_LOCATION_ASSIGNMENT IBUF-38 -to *dphy_core_inst|clk_rst|ibuf_inst
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_STANDARD "1.2V" -to "ref_clk_0_p"
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IO_RELATIVE_LOCATION_ASSIGNMENT IOPLL-A -to *dphy_core_inst|clk_rst|pll_gen[0].iopll_wrap_inst|iopll_inst
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name PLL_REFCLK_INPUT_TYPE NOT_BALANCED -to *dphy_core_inst|clk_rst|pll_gen[*].iopll_wrap_inst|iopll_inst
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name REQUIRE_PLL_INITIALIZATION_CLOCK ON -to *dphy_core_inst|clk_rst|pll_gen[*].iopll_wrap_inst|iopll_inst
+
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pkg.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_regpkg.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_io_if.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_reg_if.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/ppi_if.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name VERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/altera_std_synchronizer_nocut.v"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_axil_target.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_clk_rst_blk_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_core_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_cp_map.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_full_byte_hipi_intf.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_full_byte_wrap_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_cal_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_cal_skew_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_clk_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_clk_timing_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_clk_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_data_mux_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_data_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_data_timing_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_data_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_esc_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_esc_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_rx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_timing_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_pcs_tx.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_prbs9.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_regfile.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_regfile_top.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_syncpat.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_timer.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/dphy_top_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/hyperpipe.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/toggle_synchronizer.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/toggle_synchronizer_2.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/byte_control_wrap_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/byte_wrap_modified.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/cpa_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/fa_c2p_lane_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/fa_p2c_lane_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/ibuf_diff_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/ibuf_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/iopll_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/obuf_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/phy_adaptor_wrap.sv"]
+set_global_assignment -library "dphy_arch_fp_610" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya.sv"]
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name TCL_ENTITY_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya_timing_parameters.tcl"]
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name SDC_ENTITY_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya_timing.sdc"] -no_sdc_promotion  -no_auto_inst_discovery 
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name TCL_ENTITY_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya_timing_pins.tcl"]
+set_instance_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name TCL_ENTITY_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya_timing_utils.tcl"]
+set_global_assignment -library "dphy_arch_fp_610" -name MISC_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/addr_map.vh"]
+set_global_assignment -library "dphy_arch_fp_610" -name SOURCE_FILE [file join $::quartus(qip_path) "dphy_arch_fp_610/synth/addr_map.h"]
+set_global_assignment -library "mipi_dphy_610" -name VERILOG_FILE [file join $::quartus(qip_path) "mipi_dphy_610/synth/csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why.v"]
+set_global_assignment -library "csi2_dphy_sys_mipi_dphy" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/csi2_dphy_sys_mipi_dphy.v"]
+
+
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_TOOL_NAME "mipi_dphy"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_TOOL_VERSION "6.1.0"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_mipi_dphy_610_awu3why" -library "mipi_dphy_610" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_TOOL_NAME "dphy_arch_fp"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_TOOL_VERSION "6.1.0"
+set_global_assignment -entity "csi2_dphy_sys_mipi_dphy_dphy_arch_fp_610_vgxsyya" -library "dphy_arch_fp_610" -name IP_TOOL_ENV "QsysPrimePro"
+

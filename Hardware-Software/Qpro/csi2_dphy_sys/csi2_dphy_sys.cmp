@@ -1,0 +1,75 @@
+	component csi2_dphy_sys is
+		port (
+			csi2_rx_o_d0_ppi_rx_err_ErrSotHS                  : out std_logic;                                        -- ErrSotHS
+			csi2_rx_o_d0_ppi_rx_err_ErrSotSyncHS              : out std_logic;                                        -- ErrSotSyncHS
+			csi2_rx_o_d0_ppi_rx_err_ErrEsc                    : out std_logic;                                        -- ErrEsc
+			csi2_rx_o_d0_ppi_rx_err_ErrSyncEsc                : out std_logic;                                        -- ErrSyncEsc
+			csi2_rx_o_d0_ppi_rx_err_ErrControl                : out std_logic;                                        -- ErrControl
+			csi2_rx_o_d0_ppi_rx_err_ErrContentionLP0          : out std_logic;                                        -- ErrContentionLP0
+			csi2_rx_o_d0_ppi_rx_err_ErrContentionLP1          : out std_logic;                                        -- ErrContentionLP1
+			csi2_rx_o_d1_ppi_rx_err_ErrSotHS                  : out std_logic;                                        -- ErrSotHS
+			csi2_rx_o_d1_ppi_rx_err_ErrSotSyncHS              : out std_logic;                                        -- ErrSotSyncHS
+			csi2_rx_o_d1_ppi_rx_err_ErrEsc                    : out std_logic;                                        -- ErrEsc
+			csi2_rx_o_d1_ppi_rx_err_ErrSyncEsc                : out std_logic;                                        -- ErrSyncEsc
+			csi2_rx_o_d1_ppi_rx_err_ErrControl                : out std_logic;                                        -- ErrControl
+			csi2_rx_o_d1_ppi_rx_err_ErrContentionLP0          : out std_logic;                                        -- ErrContentionLP0
+			csi2_rx_o_d1_ppi_rx_err_ErrContentionLP1          : out std_logic;                                        -- ErrContentionLP1
+			csi2_rx_o_ck_ppi_rx_err_ErrSotHS                  : out std_logic;                                        -- ErrSotHS
+			csi2_rx_o_ck_ppi_rx_err_ErrSotSyncHS              : out std_logic;                                        -- ErrSotSyncHS
+			csi2_rx_o_ck_ppi_rx_err_ErrEsc                    : out std_logic;                                        -- ErrEsc
+			csi2_rx_o_ck_ppi_rx_err_ErrSyncEsc                : out std_logic;                                        -- ErrSyncEsc
+			csi2_rx_o_ck_ppi_rx_err_ErrControl                : out std_logic;                                        -- ErrControl
+			csi2_rx_o_ck_ppi_rx_err_ErrContentionLP0          : out std_logic;                                        -- ErrContentionLP0
+			csi2_rx_o_ck_ppi_rx_err_ErrContentionLP1          : out std_logic;                                        -- ErrContentionLP1
+			csi2_rx_video_streaming_interface_0_tdata         : out std_logic_vector(63 downto 0);                    -- tdata
+			csi2_rx_video_streaming_interface_0_tvalid        : out std_logic;                                        -- tvalid
+			csi2_rx_video_streaming_interface_0_tready        : in  std_logic                     := 'X';             -- tready
+			csi2_rx_video_streaming_interface_0_tlast         : out std_logic;                                        -- tlast
+			csi2_rx_video_streaming_interface_0_tuser         : out std_logic_vector(7 downto 0);                     -- tuser
+			csi2_rx_avalon_mm_control_interface_write         : in  std_logic                     := 'X';             -- write
+			csi2_rx_avalon_mm_control_interface_read          : in  std_logic                     := 'X';             -- read
+			csi2_rx_avalon_mm_control_interface_address       : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- address
+			csi2_rx_avalon_mm_control_interface_writedata     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			csi2_rx_avalon_mm_control_interface_readdata      : out std_logic_vector(31 downto 0);                    -- readdata
+			csi2_rx_avalon_mm_control_interface_readdatavalid : out std_logic;                                        -- readdatavalid
+			csi2_rx_avalon_mm_control_interface_waitrequest   : out std_logic;                                        -- waitrequest
+			csi2_rx_avalon_mm_control_interface_byteenable    : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
+			csi2_rx_avalon_mm_control_interface_interrupt_irq : out std_logic;                                        -- irq
+			mipi_dphy_rzq_rzq                                 : in  std_logic                     := 'X';             -- rzq
+			mipi_dphy_ref_clk_0_clk                           : in  std_logic                     := 'X';             -- clk
+			mipi_dphy_LINK0_link_core_srst_reset_n            : out std_logic;                                        -- reset_n
+			mipi_dphy_LINK0_link_core_arst_reset_n            : out std_logic;                                        -- reset_n
+			mipi_dphy_axi_lite_awaddr                         : in  std_logic_vector(11 downto 0) := (others => 'X'); -- awaddr
+			mipi_dphy_axi_lite_awvalid                        : in  std_logic                     := 'X';             -- awvalid
+			mipi_dphy_axi_lite_awready                        : out std_logic;                                        -- awready
+			mipi_dphy_axi_lite_wdata                          : in  std_logic_vector(31 downto 0) := (others => 'X'); -- wdata
+			mipi_dphy_axi_lite_wstrb                          : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- wstrb
+			mipi_dphy_axi_lite_wvalid                         : in  std_logic                     := 'X';             -- wvalid
+			mipi_dphy_axi_lite_wready                         : out std_logic;                                        -- wready
+			mipi_dphy_axi_lite_bresp                          : out std_logic_vector(1 downto 0);                     -- bresp
+			mipi_dphy_axi_lite_bvalid                         : out std_logic;                                        -- bvalid
+			mipi_dphy_axi_lite_bready                         : in  std_logic                     := 'X';             -- bready
+			mipi_dphy_axi_lite_araddr                         : in  std_logic_vector(11 downto 0) := (others => 'X'); -- araddr
+			mipi_dphy_axi_lite_arvalid                        : in  std_logic                     := 'X';             -- arvalid
+			mipi_dphy_axi_lite_arready                        : out std_logic;                                        -- arready
+			mipi_dphy_axi_lite_rdata                          : out std_logic_vector(31 downto 0);                    -- rdata
+			mipi_dphy_axi_lite_rresp                          : out std_logic_vector(1 downto 0);                     -- rresp
+			mipi_dphy_axi_lite_rvalid                         : out std_logic;                                        -- rvalid
+			mipi_dphy_axi_lite_rready                         : in  std_logic                     := 'X';             -- rready
+			mipi_dphy_axi_lite_arprot                         : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
+			mipi_dphy_axi_lite_awprot                         : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
+			mipi_dphy_LINK0_dphy_io_dphy_link_dp              : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- dphy_link_dp
+			mipi_dphy_LINK0_dphy_io_dphy_link_dn              : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- dphy_link_dn
+			mipi_dphy_LINK0_dphy_io_dphy_link_cp              : in  std_logic                     := 'X';             -- dphy_link_cp
+			mipi_dphy_LINK0_dphy_io_dphy_link_cn              : in  std_logic                     := 'X';             -- dphy_link_cn
+			mipi_dphy_reg_bus_reg_wr_en_o                     : out std_logic;                                        -- reg_wr_en_o
+			mipi_dphy_reg_bus_reg_rd_en_o                     : out std_logic;                                        -- reg_rd_en_o
+			mipi_dphy_reg_bus_reg_raddr_o                     : out std_logic_vector(10 downto 0);                    -- reg_raddr_o
+			mipi_dphy_reg_bus_reg_waddr_o                     : out std_logic_vector(10 downto 0);                    -- reg_waddr_o
+			mipi_dphy_reg_bus_reg_be_o                        : out std_logic_vector(3 downto 0);                     -- reg_be_o
+			mipi_dphy_reg_bus_reg_din_o                       : out std_logic_vector(31 downto 0);                    -- reg_din_o
+			mipi_dphy_reg_bus_reg_dout_i                      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- reg_dout_i
+			rx_axi4s_clk_bridge_in_clk_clk                    : in  std_logic                     := 'X'              -- clk
+		);
+	end component csi2_dphy_sys;
+

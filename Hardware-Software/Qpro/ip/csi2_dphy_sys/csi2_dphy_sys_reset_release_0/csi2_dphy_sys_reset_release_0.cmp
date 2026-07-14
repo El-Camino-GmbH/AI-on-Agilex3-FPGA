@@ -1,0 +1,6 @@
+	component csi2_dphy_sys_reset_release_0 is
+		port (
+			ninit_done : out std_logic   -- reset
+		);
+	end component csi2_dphy_sys_reset_release_0;
+

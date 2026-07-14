@@ -1,0 +1,654 @@
+
+State Machine - Summary
+
+State Machine - ai_control_inst|mm_interconnect_0|onchip_vid_buf_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - ai_control_inst|jtag_master|jtag_master|transacto|p2m|state
+Name state.READ_SEND_WAIT state.READ_DATA_WAIT state.READ_SEND_ISSUE state.READ_CMD_WAIT state.WRITE_WAIT state.RETURN_PACKET state.READ_ASSERT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.READY 
+state.READY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.READ_ASSERT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_WAIT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_1d_lut_0|vvp_1d_lut_0|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_1d_lut_0|vvp_1d_lut_0|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_clipper|vvp_clipper_0|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_csc_0|vvp_csc_0|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|slave_interface|ro_reg|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|csr_ctrl_mux_inst|state
+Name state.WRITE_DONE state.WRITE_PASS_WAITRQ state.READ_DONE state.READ_PASS_WAITRQ state.READ state.WRITE state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.WRITE 0 0 0 0 0 1 1 
+state.READ 0 0 0 0 1 0 1 
+state.READ_PASS_WAITRQ 0 0 0 1 0 0 1 
+state.READ_DONE 0 0 1 0 0 0 1 
+state.WRITE_PASS_WAITRQ 0 1 0 0 0 0 1 
+state.WRITE_DONE 1 0 0 0 0 0 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|mipi_rx_protocol_inst|g_csr.mipi_csi2_rx_csr_inst|mipi_ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|mipi_rx_protocol_inst|g_csr.mipi_csi2_rx_csr_inst|mipi_ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|cv2axi_inst|cv2axi|ro_reg_servicer|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|cv2axi_inst|cv2axi|ro_reg_servicer|ro_reg_servicer_inst|write_state
+Name write_state.VVP_RO_REG_WAIT_WRITE write_state.VVP_RO_REG_REMOTE_WRITE write_state.VVP_RO_REG_LOCAL_WRITE 
+write_state.VVP_RO_REG_WAIT_WRITE 0 0 0 
+write_state.VVP_RO_REG_LOCAL_WRITE 1 0 1 
+write_state.VVP_RO_REG_REMOTE_WRITE 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|algo_comp|u_intel_vvp_demosaic_algo_comp|ctrl_state
+Name ctrl_state.S_IDLE ctrl_state.S_RIGHT ctrl_state.S_RUN 
+ctrl_state.S_IDLE 0 0 0 
+ctrl_state.S_RUN 1 0 1 
+ctrl_state.S_RIGHT 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_csc_0|vvp_csc_0|algo_comp|state
+Name state.CSC_ALG_IDLE state.CSC_ALG_FLUSH state.CSC_ALG_RUN 
+state.CSC_ALG_IDLE 0 0 0 
+state.CSC_ALG_RUN 1 0 1 
+state.CSC_ALG_FLUSH 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_csc_0|vvp_csc_0|scheduler|state
+Name state.CSC_SCH_SEND_LINE_CMD state.CSC_SCH_LINE_CALCS_UPDATE state.CSC_SCH_LINE_SEEN_WAIT_CTRL_READY state.CSC_SCH_EOF_SEEN_TWO state.CSC_SCH_CTRL_PKT_OTHER_SEEN state.CSC_SCH_CTRL_PKT_UPD_SEEN state.CSC_SCH_EOF_SEEN state.CSC_SCH_IIP_SEEN state.CSC_SCH_SEND_COEFF_VALUES state.CSC_SCH_LINE_SEEN state.CSC_SCH_IDLE 
+state.CSC_SCH_IDLE 0 0 0 0 0 0 0 0 0 0 0 
+state.CSC_SCH_LINE_SEEN 0 0 0 0 0 0 0 0 0 1 1 
+state.CSC_SCH_SEND_COEFF_VALUES 0 0 0 0 0 0 0 0 1 0 1 
+state.CSC_SCH_IIP_SEEN 0 0 0 0 0 0 0 1 0 0 1 
+state.CSC_SCH_EOF_SEEN 0 0 0 0 0 0 1 0 0 0 1 
+state.CSC_SCH_CTRL_PKT_UPD_SEEN 0 0 0 0 0 1 0 0 0 0 1 
+state.CSC_SCH_CTRL_PKT_OTHER_SEEN 0 0 0 0 1 0 0 0 0 0 1 
+state.CSC_SCH_EOF_SEEN_TWO 0 0 0 1 0 0 0 0 0 0 1 
+state.CSC_SCH_LINE_SEEN_WAIT_CTRL_READY 0 0 1 0 0 0 0 0 0 0 1 
+state.CSC_SCH_LINE_CALCS_UPDATE 0 1 0 0 0 0 0 0 0 0 1 
+state.CSC_SCH_SEND_LINE_CMD 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|h_algo_comp|luma_algo_comp|scl_h_core_inst|outfifo_inst|fifo_input_inst|state
+Name state.PIPE_MATHS state.PIPE_SPACE state.PIPE_RECLAIM state.RECLAIM_SPACE state.MAKE_REQ state.CHECK_SPACE state.RESET_HOLD 
+state.RESET_HOLD 0 0 0 0 0 0 0 
+state.CHECK_SPACE 0 0 0 0 0 1 1 
+state.MAKE_REQ 0 0 0 0 1 0 1 
+state.RECLAIM_SPACE 0 0 0 1 0 0 1 
+state.PIPE_RECLAIM 0 0 1 0 0 0 1 
+state.PIPE_SPACE 0 1 0 0 0 0 1 
+state.PIPE_MATHS 1 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_csc_0|vvp_csc_0|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_clipper|vvp_clipper_0|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|slave_interface|ro_reg|ro_reg_servicer_inst|read_state
+Name read_state.VVP_RO_REG_SERVICE_LOCAL_READ read_state.VVP_RO_REG_REMOTE_READ_START read_state.VVP_RO_REG_LOCAL_READ read_state.VVP_RO_REG_WAIT_READ read_state.VVP_RO_REG_REMOTE_READ 
+read_state.VVP_RO_REG_WAIT_READ 0 0 0 0 0 
+read_state.VVP_RO_REG_LOCAL_READ 0 0 1 1 0 
+read_state.VVP_RO_REG_REMOTE_READ_START 0 1 0 1 0 
+read_state.VVP_RO_REG_SERVICE_LOCAL_READ 1 0 0 1 0 
+read_state.VVP_RO_REG_REMOTE_READ 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|scheduler|main_schedule_inst|state
+Name state.WAIT_LB_RESP state.FILL_BRANCH_RETURN state.SEND_LB_REC_CMD state.IS_CURRENT_OR_NEXT state.WAIT_AND_SEE state.CHECK_EOF state.WAIT_FOR_LINE state.SEND_LB_SEND_CMD state.SEND_ALG_CMD state.SEND_LINE_TOKEN state.SEND_LB_SHIFT_CMD state.FILL_DONE state.CHECK_FILL state.SEND_FRAME_INFO state.INIT state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+state.SEND_FRAME_INFO 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+state.CHECK_FILL 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+state.FILL_DONE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+state.SEND_LB_SHIFT_CMD 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+state.SEND_LINE_TOKEN 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+state.SEND_ALG_CMD 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+state.SEND_LB_SEND_CMD 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+state.WAIT_FOR_LINE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+state.CHECK_EOF 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+state.WAIT_AND_SEE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+state.DONE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.IS_CURRENT_OR_NEXT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.SEND_LB_REC_CMD 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.FILL_BRANCH_RETURN 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.WAIT_LB_RESP 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|scheduler|ext_inst|state
+Name state.PIPE_STATE state.BOUNDARY_HOLD state.STORE_SETTINGS state.WAIT_TAKE_EOF state.PASS_LINE_TOKEN state.ASSERT_EOF state.CHECK_SOF state.INIT state.UPDATE_COUNT 
+state.INIT 0 0 0 0 0 0 0 0 0 
+state.CHECK_SOF 0 0 0 0 0 0 1 1 0 
+state.ASSERT_EOF 0 0 0 0 0 1 0 1 0 
+state.PASS_LINE_TOKEN 0 0 0 0 1 0 0 1 0 
+state.WAIT_TAKE_EOF 0 0 0 1 0 0 0 1 0 
+state.STORE_SETTINGS 0 0 1 0 0 0 0 1 0 
+state.BOUNDARY_HOLD 0 1 0 0 0 0 0 1 0 
+state.PIPE_STATE 1 0 0 0 0 0 0 1 0 
+state.UPDATE_COUNT 0 0 0 0 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|line_buffer|resend_inst|write_state
+Name write_state.WRITE_DONE write_state.WRITE_RUN write_state.WRITE_WAIT_SPACE write_state.WRITE_INIT_1 write_state.WRITE_INIT_0 write_state.WRITE_IDLE 
+write_state.WRITE_IDLE 0 0 0 0 0 0 
+write_state.WRITE_INIT_0 0 0 0 0 1 1 
+write_state.WRITE_INIT_1 0 0 0 1 0 1 
+write_state.WRITE_WAIT_SPACE 0 0 1 0 0 1 
+write_state.WRITE_RUN 0 1 0 0 0 1 
+write_state.WRITE_DONE 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_demosaic|vvp_demosaic_0|line_buffer|resend_inst|read_state
+Name read_state.READ_SEND_RESP read_state.READ_CHECK_RESP read_state.READ_RUN read_state.READ_WAIT_DATA read_state.READ_INIT_1 read_state.READ_INIT_0 read_state.READ_RESET read_state.READ_IDLE read_state.READ_FLUSH 
+read_state.READ_IDLE 0 0 0 0 0 0 0 0 0 
+read_state.READ_RESET 0 0 0 0 0 0 1 1 0 
+read_state.READ_INIT_0 0 0 0 0 0 1 0 1 0 
+read_state.READ_INIT_1 0 0 0 0 1 0 0 1 0 
+read_state.READ_WAIT_DATA 0 0 0 1 0 0 0 1 0 
+read_state.READ_RUN 0 0 1 0 0 0 0 1 0 
+read_state.READ_CHECK_RESP 0 1 0 0 0 0 0 1 0 
+read_state.READ_SEND_RESP 1 0 0 0 0 0 0 1 0 
+read_state.READ_FLUSH 0 0 0 0 0 0 0 1 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|cv2axi_inst|cv2axi|cv2axi_core|gen_mipi_cv2axi.gen_video_streaming_interface[0].axi_st_output|state
+Name state.PAD state.SEND_LINE state.COMPLETE_FRAME_WAIT state.CLIP state.CHECK_FOR_EOF state.VVP_CTRL_PKT_DRIVE_EOF2 state.VVP_CTRL_PKT_DRIVE_EOF1 state.SEND_LINE_COMMAND state.VVP_CTRL_PKT_DRIVE_IIP4 state.VVP_CTRL_PKT_DRIVE_IIP3 state.VVP_CTRL_PKT_DRIVE_IIP2 state.VVP_CTRL_PKT_DRIVE_IIP1 state.RES_SET_INTERLACED state.RES_SET_COLOUR state.RES_SET_HEIGHT_F1 state.RES_SET_HEIGHT_F0 state.RES_SET_WIDTH state.RES_DELAY_1 state.RES_DELAY_0 state.FIND_SOF state.EMPTY_FIFO_WHEN_VIDLOCKLOST state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.EMPTY_FIFO_WHEN_VIDLOCKLOST 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.FIND_SOF 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.RES_DELAY_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.RES_DELAY_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.RES_SET_WIDTH 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.RES_SET_HEIGHT_F0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.RES_SET_HEIGHT_F1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.RES_SET_COLOUR 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.RES_SET_INTERLACED 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_IIP1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_IIP2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_IIP3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_IIP4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_LINE_COMMAND 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_EOF1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.VVP_CTRL_PKT_DRIVE_EOF2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CHECK_FOR_EOF 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CLIP 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.COMPLETE_FRAME_WAIT 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_LINE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PAD 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|discard|state
+Name state.IDLE state.DISCARD state.RUN 
+state.IDLE 0 0 0 
+state.DISCARD 1 1 0 
+state.RUN 1 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|resp_gen.resp_cc_inst|diff_clk_gen.send_state
+Name diff_clk_gen.send_state.SEND_IDLE diff_clk_gen.send_state.SEND_WAIT_ACK_LOW diff_clk_gen.send_state.SEND_WAIT_ACK_HIGH 
+diff_clk_gen.send_state.SEND_IDLE 0 0 0 
+diff_clk_gen.send_state.SEND_WAIT_ACK_HIGH 1 0 1 
+diff_clk_gen.send_state.SEND_WAIT_ACK_LOW 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|resp_gen.resp_cc_inst|diff_clk_gen.rec_state
+Name diff_clk_gen.rec_state.REC_HOLD_CMD diff_clk_gen.rec_state.REC_WAIT_VALID_LOW diff_clk_gen.rec_state.REC_ASSERT_ACK diff_clk_gen.rec_state.REC_WAIT1 diff_clk_gen.rec_state.REC_WAIT0 diff_clk_gen.rec_state.REC_IDLE 
+diff_clk_gen.rec_state.REC_IDLE 0 0 0 0 0 0 
+diff_clk_gen.rec_state.REC_WAIT0 0 0 0 0 1 1 
+diff_clk_gen.rec_state.REC_WAIT1 0 0 0 1 0 1 
+diff_clk_gen.rec_state.REC_ASSERT_ACK 0 0 1 0 0 1 
+diff_clk_gen.rec_state.REC_WAIT_VALID_LOW 0 1 0 0 0 1 
+diff_clk_gen.rec_state.REC_HOLD_CMD 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|cmd_split_inst|diff_clk_gen.send_state
+Name diff_clk_gen.send_state.SEND_IDLE diff_clk_gen.send_state.SEND_WAIT_ACK_LOW diff_clk_gen.send_state.SEND_WAIT_ACK_HIGH 
+diff_clk_gen.send_state.SEND_IDLE 0 0 0 
+diff_clk_gen.send_state.SEND_WAIT_ACK_HIGH 1 0 1 
+diff_clk_gen.send_state.SEND_WAIT_ACK_LOW 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|cmd_split_inst|diff_clk_gen.rec_state
+Name diff_clk_gen.rec_state.REC_HOLD_CMD diff_clk_gen.rec_state.REC_WAIT_VALID_LOW diff_clk_gen.rec_state.REC_ASSERT_ACK diff_clk_gen.rec_state.REC_WAIT1 diff_clk_gen.rec_state.REC_WAIT0 diff_clk_gen.rec_state.REC_IDLE 
+diff_clk_gen.rec_state.REC_IDLE 0 0 0 0 0 0 
+diff_clk_gen.rec_state.REC_WAIT0 0 0 0 0 1 1 
+diff_clk_gen.rec_state.REC_WAIT1 0 0 0 1 0 1 
+diff_clk_gen.rec_state.REC_ASSERT_ACK 0 0 1 0 0 1 
+diff_clk_gen.rec_state.REC_WAIT_VALID_LOW 0 1 0 0 0 1 
+diff_clk_gen.rec_state.REC_HOLD_CMD 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|streamer_inst|state
+Name state.FLUSH state.DONE state.PUSH_BURST state.MAKE_BURST state.INIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.INIT 0 0 0 0 1 1 
+state.MAKE_BURST 0 0 0 1 0 1 
+state.PUSH_BURST 0 0 1 0 0 1 
+state.DONE 0 1 0 0 0 1 
+state.FLUSH 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|packet_writer|master_inst|state
+Name state.MAKE_RESP state.DONE state.FLUSH state.WRITE_BURST state.WAIT_BURST state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.WAIT_BURST 0 0 0 0 1 1 
+state.WRITE_BURST 0 0 0 1 0 1 
+state.FLUSH 0 0 1 0 0 1 
+state.DONE 0 1 0 0 0 1 
+state.MAKE_RESP 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_1d_lut_0|vvp_1d_lut_0|scheduler|main_schedule_inst|state
+Name state.WAIT_LB_RESP state.FILL_BRANCH_RETURN state.SEND_LB_REC_CMD state.IS_CURRENT_OR_NEXT state.WAIT_AND_SEE state.CHECK_EOF state.WAIT_FOR_LINE state.SEND_LB_SEND_CMD state.SEND_ALG_CMD state.SEND_LINE_TOKEN state.SEND_LB_SHIFT_CMD state.FILL_DONE state.CHECK_FILL state.SEND_FRAME_INFO state.INIT state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+state.SEND_FRAME_INFO 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+state.CHECK_FILL 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+state.FILL_DONE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+state.SEND_LB_SHIFT_CMD 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+state.SEND_LINE_TOKEN 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+state.SEND_ALG_CMD 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+state.SEND_LB_SEND_CMD 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+state.WAIT_FOR_LINE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+state.CHECK_EOF 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+state.WAIT_AND_SEE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+state.DONE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.IS_CURRENT_OR_NEXT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.SEND_LB_REC_CMD 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.FILL_BRANCH_RETURN 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.WAIT_LB_RESP 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_1d_lut_0|vvp_1d_lut_0|scheduler|ext_inst|state
+Name state.PIPE_STATE state.BOUNDARY_HOLD state.STORE_SETTINGS state.WAIT_TAKE_EOF state.PASS_LINE_TOKEN state.ASSERT_EOF state.CHECK_SOF state.INIT state.UPDATE_COUNT 
+state.INIT 0 0 0 0 0 0 0 0 0 
+state.CHECK_SOF 0 0 0 0 0 0 1 1 0 
+state.ASSERT_EOF 0 0 0 0 0 1 0 1 0 
+state.PASS_LINE_TOKEN 0 0 0 0 1 0 0 1 0 
+state.WAIT_TAKE_EOF 0 0 0 1 0 0 0 1 0 
+state.STORE_SETTINGS 0 0 1 0 0 0 0 1 0 
+state.BOUNDARY_HOLD 0 1 0 0 0 0 0 1 0 
+state.PIPE_STATE 1 0 0 0 0 0 0 1 0 
+state.UPDATE_COUNT 0 0 0 0 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_1d_lut_0|vvp_1d_lut_0|algo_comp|u_intel_vvp_1d_lut_algo_comp|ctrl_state
+Name ctrl_state.S_IDLE ctrl_state.S_RIGHT ctrl_state.S_RUN 
+ctrl_state.S_IDLE 0 0 0 
+ctrl_state.S_RUN 1 0 1 
+ctrl_state.S_RIGHT 1 1 0 
+
+State Machine - ai_control_inst|one_ai_interface_0|one_ai_interface_0|state
+Name state.pixel_delay_state state.extract_pixel_state state.wait_readvalid_state state.read_word_state state.idle_state 
+state.idle_state 0 0 0 0 0 
+state.read_word_state 0 0 0 1 1 
+state.wait_readvalid_state 0 0 1 0 1 
+state.extract_pixel_state 0 1 0 0 1 
+state.pixel_delay_state 1 0 0 0 1 
+
+State Machine - ai_control_inst|jtag_master|jtag_master|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|write_state
+Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
+write_state.ST_BYPASS 0 0 0 0 
+write_state.ST_HEADER_1 0 0 1 1 
+write_state.ST_HEADER_2 0 1 0 1 
+write_state.ST_WRITE_DATA 1 0 0 1 
+
+State Machine - ai_control_inst|jtag_master|jtag_master|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|read_state
+Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
+read_state.ST_HEADER 0 0 0 
+read_state.ST_READ_DATA 1 1 0 
+read_state.ST_PADDED 1 0 1 
+
+State Machine - mipi_system_inst|mipi_dphy|mipi_dphy|arch|dphy_inst|axil_target_inst|write_cs
+Name write_cs.s_idle write_cs.s_ready write_cs.s_start 
+write_cs.s_idle 0 0 0 
+write_cs.s_start 1 0 1 
+write_cs.s_ready 1 1 0 
+
+State Machine - mipi_system_inst|mipi_dphy|mipi_dphy|arch|dphy_inst|axil_target_inst|read_cs
+Name read_cs.s_idle read_cs.s_ready read_cs.s_start 
+read_cs.s_idle 0 0 0 
+read_cs.s_start 1 0 1 
+read_cs.s_ready 1 1 0 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|mipi_rx_protocol_inst|mipi_rx_depacketizer_inst|g_crc.mipi_crc_inst|crc_gen_for_unroll.case_sel
+Name crc_gen_for_unroll.case_sel.01111 crc_gen_for_unroll.case_sel.01110 crc_gen_for_unroll.case_sel.01101 crc_gen_for_unroll.case_sel.01100 crc_gen_for_unroll.case_sel.01011 crc_gen_for_unroll.case_sel.01010 crc_gen_for_unroll.case_sel.01001 crc_gen_for_unroll.case_sel.01000 crc_gen_for_unroll.case_sel.00111 crc_gen_for_unroll.case_sel.00110 crc_gen_for_unroll.case_sel.00101 crc_gen_for_unroll.case_sel.00100 crc_gen_for_unroll.case_sel.00011 crc_gen_for_unroll.case_sel.00010 crc_gen_for_unroll.case_sel.00001 crc_gen_for_unroll.case_sel.00000 crc_gen_for_unroll.case_sel.10000 
+crc_gen_for_unroll.case_sel.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+crc_gen_for_unroll.case_sel.00001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+crc_gen_for_unroll.case_sel.00010 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+crc_gen_for_unroll.case_sel.00011 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+crc_gen_for_unroll.case_sel.00100 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.00101 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.00110 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.00111 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01000 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01001 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01010 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01011 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01100 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01101 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01110 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.01111 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel.10000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|mipi_rx_protocol_inst|mipi_rx_depacketizer_inst|g_crc.mipi_crc_inst|crc_gen_for_unroll.case_sel_r
+Name crc_gen_for_unroll.case_sel_r.01111 crc_gen_for_unroll.case_sel_r.01110 crc_gen_for_unroll.case_sel_r.01101 crc_gen_for_unroll.case_sel_r.01100 crc_gen_for_unroll.case_sel_r.01011 crc_gen_for_unroll.case_sel_r.01010 crc_gen_for_unroll.case_sel_r.01001 crc_gen_for_unroll.case_sel_r.01000 crc_gen_for_unroll.case_sel_r.00111 crc_gen_for_unroll.case_sel_r.00110 crc_gen_for_unroll.case_sel_r.00101 crc_gen_for_unroll.case_sel_r.00100 crc_gen_for_unroll.case_sel_r.00011 crc_gen_for_unroll.case_sel_r.00010 crc_gen_for_unroll.case_sel_r.00001 crc_gen_for_unroll.case_sel_r.00000 crc_gen_for_unroll.case_sel_r.10000 
+crc_gen_for_unroll.case_sel_r.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+crc_gen_for_unroll.case_sel_r.00001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+crc_gen_for_unroll.case_sel_r.00010 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+crc_gen_for_unroll.case_sel_r.00011 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.00100 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.00101 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.00110 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.00111 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01000 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01001 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01010 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01011 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01100 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01101 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01110 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.01111 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+crc_gen_for_unroll.case_sel_r.10000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+
+State Machine - mipi_system_inst|mipi_dphy|mipi_dphy|arch|dphy_inst|dphy_core_inst|dphy_link[0].dphy_link_used.dphy_pcs|dphy_rx.dphy_pcs_rx|pcs_clk_rx|esc_c_st
+Name esc_c_st.ULPS_WAKE esc_c_st.ULPS_ABORT esc_c_st.ULPS esc_c_st.HS_ACTIVE esc_c_st.HS_REQ esc_c_st.ULPS_REQ esc_c_st.ULPS_EXIT esc_c_st.ESC_IDLE 
+esc_c_st.ESC_IDLE 0 0 0 0 0 0 0 0 
+esc_c_st.ULPS_EXIT 0 0 0 0 0 0 1 1 
+esc_c_st.ULPS_REQ 0 0 0 0 0 1 0 1 
+esc_c_st.HS_REQ 0 0 0 0 1 0 0 1 
+esc_c_st.HS_ACTIVE 0 0 0 1 0 0 0 1 
+esc_c_st.ULPS 0 0 1 0 0 0 0 1 
+esc_c_st.ULPS_ABORT 0 1 0 0 0 0 0 1 
+esc_c_st.ULPS_WAKE 1 0 0 0 0 0 0 1 
+
+State Machine - mipi_system_inst|mipi_dphy|mipi_dphy|arch|dphy_inst|dphy_core_inst|dphy_link[0].dphy_link_used.dphy_pcs|dphy_rx.dphy_pcs_rx|dphy_pcs_dlanes[0].pcs_data_rx|syncpat_data|c_spat_sm
+Name c_spat_sm.PREAMBLE_EXIT c_spat_sm.SOT_ERR c_spat_sm.SEARCH_LEAD c_spat_sm.PREAMBLE c_spat_sm.HS_DATA c_spat_sm.ALT_CAL c_spat_sm.SKEW_CAL c_spat_sm.IDLE 
+c_spat_sm.IDLE 0 0 0 0 0 0 0 0 
+c_spat_sm.SKEW_CAL 0 0 0 0 0 0 1 1 
+c_spat_sm.ALT_CAL 0 0 0 0 0 1 0 1 
+c_spat_sm.HS_DATA 0 0 0 0 1 0 0 1 
+c_spat_sm.PREAMBLE 0 0 0 1 0 0 0 1 
+c_spat_sm.SEARCH_LEAD 0 0 1 0 0 0 0 1 
+c_spat_sm.SOT_ERR 0 1 0 0 0 0 0 1 
+c_spat_sm.PREAMBLE_EXIT 1 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|line_buffer|resend_inst|write_state
+Name write_state.WRITE_DONE write_state.WRITE_RUN write_state.WRITE_WAIT_SPACE write_state.WRITE_INIT_1 write_state.WRITE_INIT_0 write_state.WRITE_IDLE 
+write_state.WRITE_IDLE 0 0 0 0 0 0 
+write_state.WRITE_INIT_0 0 0 0 0 1 1 
+write_state.WRITE_INIT_1 0 0 0 1 0 1 
+write_state.WRITE_WAIT_SPACE 0 0 1 0 0 1 
+write_state.WRITE_RUN 0 1 0 0 0 1 
+write_state.WRITE_DONE 1 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|line_buffer|resend_inst|read_state
+Name read_state.READ_SEND_RESP read_state.READ_CHECK_RESP read_state.READ_RUN read_state.READ_WAIT_DATA read_state.READ_INIT_1 read_state.READ_INIT_0 read_state.READ_RESET read_state.READ_IDLE read_state.READ_FLUSH 
+read_state.READ_IDLE 0 0 0 0 0 0 0 0 0 
+read_state.READ_RESET 0 0 0 0 0 0 1 1 0 
+read_state.READ_INIT_0 0 0 0 0 0 1 0 1 0 
+read_state.READ_INIT_1 0 0 0 0 1 0 0 1 0 
+read_state.READ_WAIT_DATA 0 0 0 1 0 0 0 1 0 
+read_state.READ_RUN 0 0 1 0 0 0 0 1 0 
+read_state.READ_CHECK_RESP 0 1 0 0 0 0 0 1 0 
+read_state.READ_SEND_RESP 1 0 0 0 0 0 0 1 0 
+read_state.READ_FLUSH 0 0 0 0 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|scheduler|init_inst|state
+Name state.DONE state.RUN state.INIT state.IDLE 
+state.IDLE 0 0 0 0 
+state.INIT 0 0 1 1 
+state.RUN 0 1 0 1 
+state.DONE 1 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|scheduler|main_schedule_inst|state
+Name state.TAKE_EARLY_EOF_INIT state.FILL_PIPE state.WAIT_LB_RESP state.FILL_BRANCH_RETURN state.IS_CURRENT_OR_NEXT state.WAIT_FOR_LINE state.SEND_LB_REC_CMD state.CHECK_INIT_TAKEN state.CHECK_SHIFT state.WAIT_AND_SEE state.CHECK_EOF state.PRE_WAIT_FOR_LINE state.DONE state.SEND_LB_SEND_CMD state.SEND_V_CMD state.SEND_LINE_SEL_CMD state.SEND_H_CMD state.SEND_LINE_TOKEN state.STEP_SHIFT_COMPUTE state.PIPE_MATHS2 state.PIPE_MATHS state.SEND_LB_SHIFT_CMD state.WAIT_INIT state.CHECK_FILL state.SEND_FRAME_INFO state.INIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.SEND_FRAME_INFO 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.CHECK_FILL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WAIT_INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.SEND_LB_SHIFT_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.PIPE_MATHS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.PIPE_MATHS2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.STEP_SHIFT_COMPUTE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.SEND_LINE_TOKEN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.SEND_H_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.SEND_LINE_SEL_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_V_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_LB_SEND_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DONE 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRE_WAIT_FOR_LINE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CHECK_EOF 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_AND_SEE 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CHECK_SHIFT 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CHECK_INIT_TAKEN 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_LB_REC_CMD 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_FOR_LINE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.IS_CURRENT_OR_NEXT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FILL_BRANCH_RETURN 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_LB_RESP 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FILL_PIPE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TAKE_EARLY_EOF_INIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|scheduler|ext_inst|state
+Name state.UPDATE_COUNT state.PIPE_STATE state.SS_PIPE_STATE state.BOUNDARY_HOLD state.STORE_SETTINGS state.WAIT_TAKE_EOF state.PASS_LINE_TOKEN state.ASSERT_EOF state.CHECK_SOF state.INIT 
+state.INIT 0 0 0 0 0 0 0 0 0 0 
+state.CHECK_SOF 0 0 0 0 0 0 0 0 1 1 
+state.ASSERT_EOF 0 0 0 0 0 0 0 1 0 1 
+state.PASS_LINE_TOKEN 0 0 0 0 0 0 1 0 0 1 
+state.WAIT_TAKE_EOF 0 0 0 0 0 1 0 0 0 1 
+state.STORE_SETTINGS 0 0 0 0 1 0 0 0 0 1 
+state.BOUNDARY_HOLD 0 0 0 1 0 0 0 0 0 1 
+state.SS_PIPE_STATE 0 0 1 0 0 0 0 0 0 1 
+state.PIPE_STATE 0 1 0 0 0 0 0 0 0 1 
+state.UPDATE_COUNT 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|h_algo_comp|luma_algo_comp|scl_h_core_inst|ctrl_inst|pre_state
+Name pre_state.PRE_WAIT_BACKEND pre_state.PRE_WAIT_MAIN pre_state.PRE_CALC_INIT pre_state.PRE_RUN_DIVIDER pre_state.PRE_SET_VALID pre_state.PRE_INIT_DIVIDER pre_state.PRE_CHECK_INIT pre_state.PRE_IDLE pre_state.PRE_INIT_DONE 
+pre_state.PRE_IDLE 0 0 0 0 0 0 0 0 0 
+pre_state.PRE_CHECK_INIT 0 0 0 0 0 0 1 1 0 
+pre_state.PRE_INIT_DIVIDER 0 0 0 0 0 1 0 1 0 
+pre_state.PRE_SET_VALID 0 0 0 0 1 0 0 1 0 
+pre_state.PRE_RUN_DIVIDER 0 0 0 1 0 0 0 1 0 
+pre_state.PRE_CALC_INIT 0 0 1 0 0 0 0 1 0 
+pre_state.PRE_WAIT_MAIN 0 1 0 0 0 0 0 1 0 
+pre_state.PRE_WAIT_BACKEND 1 0 0 0 0 0 0 1 0 
+pre_state.PRE_INIT_DONE 0 0 0 0 0 0 0 1 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|h_algo_comp|luma_algo_comp|scl_h_core_inst|ctrl_inst|state
+Name state.FLUSH state.WAIT_FLUSH state.DONE state.CHECK_FLUSH state.RUN state.WAIT_DATA state.WAIT_FILL state.WAIT_SPACE state.FILL state.WAIT_VALID state.STORE_ARGS state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+state.STORE_ARGS 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAIT_VALID 0 0 0 0 0 0 0 0 0 1 0 1 
+state.FILL 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WAIT_SPACE 0 0 0 0 0 0 0 1 0 0 0 1 
+state.WAIT_FILL 0 0 0 0 0 0 1 0 0 0 0 1 
+state.WAIT_DATA 0 0 0 0 0 1 0 0 0 0 0 1 
+state.RUN 0 0 0 0 1 0 0 0 0 0 0 1 
+state.CHECK_FLUSH 0 0 0 1 0 0 0 0 0 0 0 1 
+state.DONE 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WAIT_FLUSH 0 1 0 0 0 0 0 0 0 0 0 1 
+state.FLUSH 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_scaler|vvp_scaler_debug|h_algo_comp|luma_algo_comp|scl_h_core_inst|backend_inst|state
+Name state.IDLE state.FLUSH state.RUN 
+state.IDLE 0 0 0 
+state.RUN 1 0 1 
+state.FLUSH 1 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_vfw|vvp_vfw_debug|scheduler|state
+Name state.SEND_BROKEN_FRAME_TO_RD state.WAIT_FOR_NEXT_FRAME state.WAIT_FOR_FREE_BUFF state.LOOP_WAIT_FOR_PKT_WRITER_RESPONSES state.FRAME_WRITER_START_OF_FRAME_DONE state.FRAME_WRITER_START_OF_FRAME_DECISION state.WAIT_FOR_CSR_HEIGHT_TO_ARRIVE2 state.WAIT_FOR_CSR_HEIGHT_TO_ARRIVE1 state.EXTERNAL_END_OF_FRAME_ADMIN2 state.EXTERNAL_END_OF_FRAME_ADMIN1 state.LOOP_EXT_LONG_FRAME_SEND_CMD_TO_DISCARD_BLOCK state.CLEAR_FIELD_CONSUME_FLAG state.NO_FREE_BUFFERS_IN_SS_MODE_SO_CONSUME state.START_CONSUME_WHEN_NOT_IN_RUN_MODE state.LOOP_BEGIN state.LOOP_SEND_CMD_TO_PKT_WRITER state.LOOP_UPDATE_MEM_ADDRESS state.END_OF_FRAME_UPDATE state.FRAME_WRITER_START_OF_FRAME state.DETERMINE_CTRL_PKT_TYPE state.LOOP_CHECK_FOR_LAST_LINE_OF_FRAME state.EXTERNAL_END_OF_FRAME_ADMIN3 state.SHORT_FRAME_SET_ACTUAL_HEIGHT state.LOOP_SEND_CMD_TO_DISCARD_BLOCK state.LOOP_EXT_LONG_FRAME__INC_LINE_CNT_AND_DRIVE_RDY state.SEND_EOF_INFO_OVER_TO_RD_SCHEDULER state.EXTERNAL_WAIT_FOR_VALID_LINE_AND_RELEASE_STATUS state.LOOP_INC_LINE_CNT_AND_DRIVE_RDY state.INIT_INC_LINE_COUNT state.INIT_CHECK_IIP_HEIGHT_AGAINST_MAX_HEIGHT state.LOAD_CTRL_PKT_BEATS state.ZERO_LENGTH_FRAME_SET_ZERO_LENGTH state.EXTERNAL_TXMIT_ACTUAL_HEIGHT state.END_OF_FRAME state.HANDLE_AUX_PACKET state.SEND_IIP_INFO_TO_RD_SCHEDULER state.WAIT_FOR_FIRST_LINE_TOKEN state.DROP_BROKEN state.SEND_SYNC_CMD_TXMIT_FRAME state.INIT_LINE_COUNT_AND_WIDTH_INFO state.EXECUTE_COMMIT1 state.EXECUTE_COMMIT2 state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.EXECUTE_COMMIT2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.EXECUTE_COMMIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.INIT_LINE_COUNT_AND_WIDTH_INFO 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.SEND_SYNC_CMD_TXMIT_FRAME 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.DROP_BROKEN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.WAIT_FOR_FIRST_LINE_TOKEN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.SEND_IIP_INFO_TO_RD_SCHEDULER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.HANDLE_AUX_PACKET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.END_OF_FRAME 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.EXTERNAL_TXMIT_ACTUAL_HEIGHT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.ZERO_LENGTH_FRAME_SET_ZERO_LENGTH 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.LOAD_CTRL_PKT_BEATS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.INIT_CHECK_IIP_HEIGHT_AGAINST_MAX_HEIGHT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.INIT_INC_LINE_COUNT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_INC_LINE_CNT_AND_DRIVE_RDY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.EXTERNAL_WAIT_FOR_VALID_LINE_AND_RELEASE_STATUS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_EOF_INFO_OVER_TO_RD_SCHEDULER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_EXT_LONG_FRAME__INC_LINE_CNT_AND_DRIVE_RDY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_SEND_CMD_TO_DISCARD_BLOCK 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SHORT_FRAME_SET_ACTUAL_HEIGHT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.EXTERNAL_END_OF_FRAME_ADMIN3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_CHECK_FOR_LAST_LINE_OF_FRAME 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DETERMINE_CTRL_PKT_TYPE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FRAME_WRITER_START_OF_FRAME 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.END_OF_FRAME_UPDATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_UPDATE_MEM_ADDRESS 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_SEND_CMD_TO_PKT_WRITER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_BEGIN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.START_CONSUME_WHEN_NOT_IN_RUN_MODE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.NO_FREE_BUFFERS_IN_SS_MODE_SO_CONSUME 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.CLEAR_FIELD_CONSUME_FLAG 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_EXT_LONG_FRAME_SEND_CMD_TO_DISCARD_BLOCK 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.EXTERNAL_END_OF_FRAME_ADMIN1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.EXTERNAL_END_OF_FRAME_ADMIN2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_FOR_CSR_HEIGHT_TO_ARRIVE1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_FOR_CSR_HEIGHT_TO_ARRIVE2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FRAME_WRITER_START_OF_FRAME_DECISION 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FRAME_WRITER_START_OF_FRAME_DONE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LOOP_WAIT_FOR_PKT_WRITER_RESPONSES 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_FOR_FREE_BUFF 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WAIT_FOR_NEXT_FRAME 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.SEND_BROKEN_FRAME_TO_RD 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - mipi_system_inst|csi2_rx|csi2_rx|cv2axi_inst|cv2axi|cv2axi_core|gen_mipi_cv2axi.gen_video_streaming_interface[0].format_detection|write_state
+Name write_state.SEND_EOF0 write_state.SEND_EOF1 write_state.SEND_EOL write_state.SEND_DATA write_state.SEND_SOF write_state.IDLE 
+write_state.IDLE 0 0 0 0 0 0 
+write_state.SEND_SOF 0 0 0 0 1 1 
+write_state.SEND_DATA 0 0 0 1 0 1 
+write_state.SEND_EOL 0 0 1 0 0 1 
+write_state.SEND_EOF1 0 1 0 0 0 1 
+write_state.SEND_EOF0 1 0 0 0 0 1 
+
+State Machine - mipi_system_inst|mipi_dphy|mipi_dphy|arch|dphy_inst|dphy_core_inst|dphy_link[0].dphy_link_used.dphy_pcs|dphy_rx.dphy_pcs_rx|dphy_pcs_dlanes[1].pcs_data_rx|syncpat_data|c_spat_sm
+Name c_spat_sm.PREAMBLE_EXIT c_spat_sm.SOT_ERR c_spat_sm.SEARCH_LEAD c_spat_sm.PREAMBLE c_spat_sm.HS_DATA c_spat_sm.ALT_CAL c_spat_sm.SKEW_CAL c_spat_sm.IDLE 
+c_spat_sm.IDLE 0 0 0 0 0 0 0 0 
+c_spat_sm.SKEW_CAL 0 0 0 0 0 0 1 1 
+c_spat_sm.ALT_CAL 0 0 0 0 0 1 0 1 
+c_spat_sm.HS_DATA 0 0 0 0 1 0 0 1 
+c_spat_sm.PREAMBLE 0 0 0 1 0 0 0 1 
+c_spat_sm.SEARCH_LEAD 0 0 1 0 0 0 0 1 
+c_spat_sm.SOT_ERR 0 1 0 0 0 0 0 1 
+c_spat_sm.PREAMBLE_EXIT 1 0 0 0 0 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_clipper|vvp_clipper_0|scheduler|state
+Name state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS_EXTRA_TWO state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS_EXTRA state.VVP_CLP_SCHD_CTRL_PKT_OTHER_SEEN state.VVP_CLP_SCHD_CTRL_PKT_IIP_SEEN state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_EOF state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_OTHER state.VVP_CLP_SCHD_COMMAND state.VVP_CLP_SCHD_CTRL_PKT_UPD_SEEN state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_EOF2 state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_IIP state.VVP_CLP_SCHD_CTRL_WAIT_TO_CHECK_FOR_VALIDITY_OF_CLIP state.VVP_CLP_SCHD_LINE_SEEN__INC_COUNTER state.VVP_CLP_SCHD_LINE_SEEN__WAIT_FOR_CTRL_READY state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS state.VVP_CLP_SCHD_EARLY_SOF state.VVP_CLP_SCHD_WAIT state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_OTHER_CONTINUE 
+state.VVP_CLP_SCHD_WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.VVP_CLP_SCHD_EARLY_SOF 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+state.VVP_CLP_SCHD_LINE_SEEN__WAIT_FOR_CTRL_READY 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+state.VVP_CLP_SCHD_LINE_SEEN__INC_COUNTER 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_WAIT_TO_CHECK_FOR_VALIDITY_OF_CLIP 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_IIP 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_EOF2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_UPD_SEEN 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_COMMAND 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_OTHER 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_OTHER_CONTINUE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.VVP_CLP_SCHD_CTRL_PKT_DRIVE_EOF 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_IIP_SEEN 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CTRL_PKT_OTHER_SEEN 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS_EXTRA 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.VVP_CLP_SCHD_CURRENT_LINE_CHECKS_EXTRA_TWO 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+
+State Machine - ai_control_inst|video_path|vvp_clipper|vvp_clipper_0|algo_comp|front_clip_inst|state
+Name state.FLUSH state.RUN state.DISCARD state.IDLE 
+state.IDLE 0 0 0 0 
+state.DISCARD 0 0 1 1 
+state.RUN 0 1 0 1 
+state.FLUSH 1 0 0 1 
+
+State Machine - ai_control_inst|video_path|vvp_clipper|vvp_clipper_0|algo_comp|back_clip_inst|state
+Name state.IDLE state.FLUSH state.RUN 
+state.IDLE 0 0 0 
+state.RUN 1 0 1 
+state.FLUSH 1 1 0 

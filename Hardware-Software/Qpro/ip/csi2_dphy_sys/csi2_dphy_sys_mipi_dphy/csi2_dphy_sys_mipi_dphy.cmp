@@ -1,0 +1,163 @@
+	component csi2_dphy_sys_mipi_dphy is
+		port (
+			rzq                         : in  std_logic                     := 'X';             -- rzq
+			ref_clk_0_p                 : in  std_logic                     := 'X';             -- clk
+			arst_n                      : in  std_logic                     := 'X';             -- reset_n
+			LINK0_link_core_clk         : out std_logic;                                        -- clk
+			LINK0_link_srst_n           : out std_logic;                                        -- reset_n
+			LINK0_link_arst_n           : out std_logic;                                        -- reset_n
+			axil_clk                    : in  std_logic                     := 'X';             -- clk
+			srst_axil_n                 : in  std_logic                     := 'X';             -- reset_n
+			axi_lite_awaddr             : in  std_logic_vector(11 downto 0) := (others => 'X'); -- awaddr
+			axi_lite_awvalid            : in  std_logic                     := 'X';             -- awvalid
+			axi_lite_awready            : out std_logic;                                        -- awready
+			axi_lite_wdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- wdata
+			axi_lite_wstrb              : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- wstrb
+			axi_lite_wvalid             : in  std_logic                     := 'X';             -- wvalid
+			axi_lite_wready             : out std_logic;                                        -- wready
+			axi_lite_bresp              : out std_logic_vector(1 downto 0);                     -- bresp
+			axi_lite_bvalid             : out std_logic;                                        -- bvalid
+			axi_lite_bready             : in  std_logic                     := 'X';             -- bready
+			axi_lite_araddr             : in  std_logic_vector(11 downto 0) := (others => 'X'); -- araddr
+			axi_lite_arvalid            : in  std_logic                     := 'X';             -- arvalid
+			axi_lite_arready            : out std_logic;                                        -- arready
+			axi_lite_rdata              : out std_logic_vector(31 downto 0);                    -- rdata
+			axi_lite_rresp              : out std_logic_vector(1 downto 0);                     -- rresp
+			axi_lite_rvalid             : out std_logic;                                        -- rvalid
+			axi_lite_rready             : in  std_logic                     := 'X';             -- rready
+			axi_lite_arprot             : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
+			axi_lite_awprot             : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
+			LINK0_D0_RxWordClkHS        : out std_logic;                                        -- clk
+			LINK0_D1_RxWordClkHS        : out std_logic;                                        -- clk
+			LINK0_CK_RxWordClkHS        : out std_logic;                                        -- clk
+			LINK0_D0_RxSRst_n           : out std_logic;                                        -- reset_n
+			LINK0_D1_RxSRst_n           : out std_logic;                                        -- reset_n
+			LINK0_CK_RxSRst_n           : out std_logic;                                        -- reset_n
+			LINK0_D0_RxDataWidthHS      : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- RxDataWidthHS
+			LINK0_D0_RxDataHS           : out std_logic_vector(15 downto 0);                    -- RxDataHS
+			LINK0_D0_RxValidHS          : out std_logic_vector(1 downto 0);                     -- RxValidHS
+			LINK0_D0_RxActiveHS         : out std_logic;                                        -- RxActiveHS
+			LINK0_D0_RxSyncHS           : out std_logic;                                        -- RxSyncHS
+			LINK0_D0_RxDetectEobHS      : in  std_logic                     := 'X';             -- RxDetectEobHS
+			LINK0_D0_RxClkActiveHS      : out std_logic;                                        -- RxClkActiveHS
+			LINK0_D0_RxDDRClkHS         : out std_logic;                                        -- RxDDRClkHS
+			LINK0_D0_RxSkewCalHS        : out std_logic;                                        -- RxSkewCalHS
+			LINK0_D0_RxAlternateCalHS   : out std_logic;                                        -- RxAlternateCalHS
+			LINK0_D0_RxErrorCalHS       : out std_logic;                                        -- RxErrorCalHS
+			LINK0_D1_RxDataWidthHS      : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- RxDataWidthHS
+			LINK0_D1_RxDataHS           : out std_logic_vector(15 downto 0);                    -- RxDataHS
+			LINK0_D1_RxValidHS          : out std_logic_vector(1 downto 0);                     -- RxValidHS
+			LINK0_D1_RxActiveHS         : out std_logic;                                        -- RxActiveHS
+			LINK0_D1_RxSyncHS           : out std_logic;                                        -- RxSyncHS
+			LINK0_D1_RxDetectEobHS      : in  std_logic                     := 'X';             -- RxDetectEobHS
+			LINK0_D1_RxClkActiveHS      : out std_logic;                                        -- RxClkActiveHS
+			LINK0_D1_RxDDRClkHS         : out std_logic;                                        -- RxDDRClkHS
+			LINK0_D1_RxSkewCalHS        : out std_logic;                                        -- RxSkewCalHS
+			LINK0_D1_RxAlternateCalHS   : out std_logic;                                        -- RxAlternateCalHS
+			LINK0_D1_RxErrorCalHS       : out std_logic;                                        -- RxErrorCalHS
+			LINK0_CK_RxDataWidthHS      : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- RxDataWidthHS
+			LINK0_CK_RxDataHS           : out std_logic_vector(15 downto 0);                    -- RxDataHS
+			LINK0_CK_RxValidHS          : out std_logic_vector(1 downto 0);                     -- RxValidHS
+			LINK0_CK_RxActiveHS         : out std_logic;                                        -- RxActiveHS
+			LINK0_CK_RxSyncHS           : out std_logic;                                        -- RxSyncHS
+			LINK0_CK_RxDetectEobHS      : in  std_logic                     := 'X';             -- RxDetectEobHS
+			LINK0_CK_RxClkActiveHS      : out std_logic;                                        -- RxClkActiveHS
+			LINK0_CK_RxDDRClkHS         : out std_logic;                                        -- RxDDRClkHS
+			LINK0_CK_RxSkewCalHS        : out std_logic;                                        -- RxSkewCalHS
+			LINK0_CK_RxAlternateCalHS   : out std_logic;                                        -- RxAlternateCalHS
+			LINK0_CK_RxErrorCalHS       : out std_logic;                                        -- RxErrorCalHS
+			LINK0_D0_RxClkEsc           : out std_logic;                                        -- RxClkEsc
+			LINK0_D0_RxLpdtEsc          : out std_logic;                                        -- RxLpdtEsc
+			LINK0_D0_RxUlpsEsc          : out std_logic;                                        -- RxUlpsEsc
+			LINK0_D0_RxTriggerEsc       : out std_logic_vector(3 downto 0);                     -- RxTriggerEsc
+			LINK0_D0_RxWakeup           : out std_logic;                                        -- RxWakeup
+			LINK0_D0_RxDataEsc          : out std_logic_vector(7 downto 0);                     -- RxDataEsc
+			LINK0_D0_RxValidEsc         : out std_logic;                                        -- RxValidEsc
+			LINK0_D1_RxClkEsc           : out std_logic;                                        -- RxClkEsc
+			LINK0_D1_RxLpdtEsc          : out std_logic;                                        -- RxLpdtEsc
+			LINK0_D1_RxUlpsEsc          : out std_logic;                                        -- RxUlpsEsc
+			LINK0_D1_RxTriggerEsc       : out std_logic_vector(3 downto 0);                     -- RxTriggerEsc
+			LINK0_D1_RxWakeup           : out std_logic;                                        -- RxWakeup
+			LINK0_D1_RxDataEsc          : out std_logic_vector(7 downto 0);                     -- RxDataEsc
+			LINK0_D1_RxValidEsc         : out std_logic;                                        -- RxValidEsc
+			LINK0_CK_RxClkEsc           : out std_logic;                                        -- RxClkEsc
+			LINK0_CK_RxLpdtEsc          : out std_logic;                                        -- RxLpdtEsc
+			LINK0_CK_RxUlpsEsc          : out std_logic;                                        -- RxUlpsEsc
+			LINK0_CK_RxTriggerEsc       : out std_logic_vector(3 downto 0);                     -- RxTriggerEsc
+			LINK0_CK_RxWakeup           : out std_logic;                                        -- RxWakeup
+			LINK0_CK_RxDataEsc          : out std_logic_vector(7 downto 0);                     -- RxDataEsc
+			LINK0_CK_RxValidEsc         : out std_logic;                                        -- RxValidEsc
+			LINK0_D0_TurnRequest        : in  std_logic                     := 'X';             -- TurnRequest
+			LINK0_D0_Direction          : out std_logic;                                        -- Direction
+			LINK0_D0_TurnDisable        : in  std_logic                     := 'X';             -- TurnDisable
+			LINK0_D0_ForceRxmode        : in  std_logic                     := 'X';             -- ForceRxmode
+			LINK0_D0_ForceTxStopmode    : in  std_logic                     := 'X';             -- ForceTxStopmode
+			LINK0_D0_Stopstate          : out std_logic;                                        -- Stopstate
+			LINK0_D0_Enable             : in  std_logic                     := 'X';             -- Enable
+			LINK0_D0_AlpMode            : in  std_logic                     := 'X';             -- AlpMode
+			LINK0_D0_TxUlpsClk          : in  std_logic                     := 'X';             -- TxUlpsClk
+			LINK0_D0_RxUlpsClkNot       : out std_logic;                                        -- RxUlpsClkNot
+			LINK0_D0_UlpsActiveNot      : out std_logic;                                        -- UlpsActiveNot
+			LINK0_D0_TxHSIdleClkHS      : in  std_logic                     := 'X';             -- TxHSIdleClkHS
+			LINK0_D0_TxHSIdleClkReadyHS : out std_logic;                                        -- TxHSIdleClkReadyHS
+			LINK0_D1_TurnRequest        : in  std_logic                     := 'X';             -- TurnRequest
+			LINK0_D1_Direction          : out std_logic;                                        -- Direction
+			LINK0_D1_TurnDisable        : in  std_logic                     := 'X';             -- TurnDisable
+			LINK0_D1_ForceRxmode        : in  std_logic                     := 'X';             -- ForceRxmode
+			LINK0_D1_ForceTxStopmode    : in  std_logic                     := 'X';             -- ForceTxStopmode
+			LINK0_D1_Stopstate          : out std_logic;                                        -- Stopstate
+			LINK0_D1_Enable             : in  std_logic                     := 'X';             -- Enable
+			LINK0_D1_AlpMode            : in  std_logic                     := 'X';             -- AlpMode
+			LINK0_D1_TxUlpsClk          : in  std_logic                     := 'X';             -- TxUlpsClk
+			LINK0_D1_RxUlpsClkNot       : out std_logic;                                        -- RxUlpsClkNot
+			LINK0_D1_UlpsActiveNot      : out std_logic;                                        -- UlpsActiveNot
+			LINK0_D1_TxHSIdleClkHS      : in  std_logic                     := 'X';             -- TxHSIdleClkHS
+			LINK0_D1_TxHSIdleClkReadyHS : out std_logic;                                        -- TxHSIdleClkReadyHS
+			LINK0_CK_TurnRequest        : in  std_logic                     := 'X';             -- TurnRequest
+			LINK0_CK_Direction          : out std_logic;                                        -- Direction
+			LINK0_CK_TurnDisable        : in  std_logic                     := 'X';             -- TurnDisable
+			LINK0_CK_ForceRxmode        : in  std_logic                     := 'X';             -- ForceRxmode
+			LINK0_CK_ForceTxStopmode    : in  std_logic                     := 'X';             -- ForceTxStopmode
+			LINK0_CK_Stopstate          : out std_logic;                                        -- Stopstate
+			LINK0_CK_Enable             : in  std_logic                     := 'X';             -- Enable
+			LINK0_CK_AlpMode            : in  std_logic                     := 'X';             -- AlpMode
+			LINK0_CK_TxUlpsClk          : in  std_logic                     := 'X';             -- TxUlpsClk
+			LINK0_CK_RxUlpsClkNot       : out std_logic;                                        -- RxUlpsClkNot
+			LINK0_CK_UlpsActiveNot      : out std_logic;                                        -- UlpsActiveNot
+			LINK0_CK_TxHSIdleClkHS      : in  std_logic                     := 'X';             -- TxHSIdleClkHS
+			LINK0_CK_TxHSIdleClkReadyHS : out std_logic;                                        -- TxHSIdleClkReadyHS
+			LINK0_D0_ErrSotHS           : out std_logic;                                        -- ErrSotHS
+			LINK0_D0_ErrSotSyncHS       : out std_logic;                                        -- ErrSotSyncHS
+			LINK0_D0_ErrEsc             : out std_logic;                                        -- ErrEsc
+			LINK0_D0_ErrSyncEsc         : out std_logic;                                        -- ErrSyncEsc
+			LINK0_D0_ErrControl         : out std_logic;                                        -- ErrControl
+			LINK0_D0_ErrContentionLP0   : out std_logic;                                        -- ErrContentionLP0
+			LINK0_D0_ErrContentionLP1   : out std_logic;                                        -- ErrContentionLP1
+			LINK0_D1_ErrSotHS           : out std_logic;                                        -- ErrSotHS
+			LINK0_D1_ErrSotSyncHS       : out std_logic;                                        -- ErrSotSyncHS
+			LINK0_D1_ErrEsc             : out std_logic;                                        -- ErrEsc
+			LINK0_D1_ErrSyncEsc         : out std_logic;                                        -- ErrSyncEsc
+			LINK0_D1_ErrControl         : out std_logic;                                        -- ErrControl
+			LINK0_D1_ErrContentionLP0   : out std_logic;                                        -- ErrContentionLP0
+			LINK0_D1_ErrContentionLP1   : out std_logic;                                        -- ErrContentionLP1
+			LINK0_CK_ErrSotHS           : out std_logic;                                        -- ErrSotHS
+			LINK0_CK_ErrSotSyncHS       : out std_logic;                                        -- ErrSotSyncHS
+			LINK0_CK_ErrEsc             : out std_logic;                                        -- ErrEsc
+			LINK0_CK_ErrSyncEsc         : out std_logic;                                        -- ErrSyncEsc
+			LINK0_CK_ErrControl         : out std_logic;                                        -- ErrControl
+			LINK0_CK_ErrContentionLP0   : out std_logic;                                        -- ErrContentionLP0
+			LINK0_CK_ErrContentionLP1   : out std_logic;                                        -- ErrContentionLP1
+			LINK0_dphy_link_dp          : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- dphy_link_dp
+			LINK0_dphy_link_dn          : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- dphy_link_dn
+			LINK0_dphy_link_cp          : in  std_logic                     := 'X';             -- dphy_link_cp
+			LINK0_dphy_link_cn          : in  std_logic                     := 'X';             -- dphy_link_cn
+			reg_wr_en_o                 : out std_logic;                                        -- reg_wr_en_o
+			reg_rd_en_o                 : out std_logic;                                        -- reg_rd_en_o
+			reg_raddr_o                 : out std_logic_vector(10 downto 0);                    -- reg_raddr_o
+			reg_waddr_o                 : out std_logic_vector(10 downto 0);                    -- reg_waddr_o
+			reg_be_o                    : out std_logic_vector(3 downto 0);                     -- reg_be_o
+			reg_din_o                   : out std_logic_vector(31 downto 0);                    -- reg_din_o
+			reg_dout_i                  : in  std_logic_vector(31 downto 0) := (others => 'X')  -- reg_dout_i
+		);
+	end component csi2_dphy_sys_mipi_dphy;
+

@@ -1,0 +1,20 @@
+Fitter Status : Successful - Tue Jul 14 13:46:19 2026
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Revision Name : AXC3000_MIPI
+Top-level Entity Name : AXC3000_MIPI
+Family : Agilex 3
+Device : A3CY100BM16AE7S
+Timing Models : Final
+Power Models : Final
+Device Status : Final
+Logic utilization (in ALMs) : 19,629 / 34,000 ( 58 % )
+Total dedicated logic registers : 42685
+Total pins : 20 / 254 ( 8 % )
+Total block memory bits : 3,200,302 / 5,365,760 ( 60 % )
+Total RAM Blocks : 250 / 262 ( 95 % )
+Total DSP Blocks : 95 / 138 ( 69 % )
+Total GTS Transceiver Channels : 0 / 4 ( 0 % )
+Total HSSI Ethernet Channels : 0 / 1 ( 0 % )
+Total HSSI PCIEs : 0 / 1 ( 0 % )
+Total HSSI HPS : 0 / 1 ( 0 % )
+Total PLLs : 2 / 11 ( 18 % )

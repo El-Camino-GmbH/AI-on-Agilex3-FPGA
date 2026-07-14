@@ -1,0 +1,18 @@
+# system info fffio2 on 2026.03.13.13:12:25
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for fffio2 on 2026.03.13.13:12:25
+files:
+filepath,kind,attributes,module,is_top
+sim/fffio2.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,fffio2,true
+ram_2port_2060/sim/fffio2_ram_2port_2060_k66s2ry.v,VERILOG,,fffio2_ram_2port_2060_k66s2ry,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+fffio2.ram_2port_0,fffio2_ram_2port_2060_k66s2ry

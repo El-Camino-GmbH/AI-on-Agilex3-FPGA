@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_2060/sim/fffio2_ram_2port_2060_k66s2ry.v"
+   type="VERILOG"
+   library="ram_2port_2060" />
+ <file
+   path="sim/fffio2.v"
+   type="VERILOG"
+   library="fffio2"
+   hasInlineConfiguration="true" />
+ <topLevel name="fffio2.fffio2" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

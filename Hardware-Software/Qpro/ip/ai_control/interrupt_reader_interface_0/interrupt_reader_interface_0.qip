@@ -1,0 +1,38 @@
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TOOL_VENDOR_NAME "Your Name"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TOP_LEVEL_COMPONENT_NAME "interrupt_reader_interface"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name OCS_IP_FILE [file join $::quartus(qip_path) "../interrupt_reader_interface_0.ip"]
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name OCS_IP_TYPE "interrupt_reader_interface"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name OCS_IP_VERSION "1.0"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name OCS_IP_HASH "feyxyhq"
+set_global_assignment -library "interrupt_reader_interface_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "interrupt_reader_interface_0.sopcinfo"]
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name SLD_INFO "QSYS_NAME interrupt_reader_interface_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "interrupt_reader_interface_0" -name MISC_FILE [file join $::quartus(qip_path) "interrupt_reader_interface_0.cmp"]
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "interrupt_reader_interface_0" -name MISC_FILE [file join $::quartus(qip_path) "../interrupt_reader_interface_0.ip"]
+
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_NAME "aW50ZXJydXB0X3JlYWRlcl9pbnRlcmZhY2U="
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_DISPLAY_NAME "VkZXIEZyYW1lIFdyaXRlciBJbnRlcnJ1cHQgUmVhZGVy"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_AUTHOR "WW91ciBOYW1l"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_DESCRIPTION "V2FpdHMgZm9yIElSUSB0aGVuIHJlYWRzIGF2YWxvbl9zbGF2ZV8wIGFuZCBvdXRwdXRzIGN5Y2xlIGNvdW50"
+set_global_assignment -entity "interrupt_reader_interface" -library "interrupt_reader_interface_10" -name IP_COMPONENT_GROUP "Q3VzdG9tIElQ"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_NAME "aW50ZXJydXB0X3JlYWRlcl9pbnRlcmZhY2VfMA=="
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_AUTHOR "WW91ciBOYW1l"
+set_global_assignment -entity "interrupt_reader_interface_0" -library "interrupt_reader_interface_0" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "interrupt_reader_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "interrupt_reader_interface_10/synth/interrupt_reader_interface.vhd"]
+set_global_assignment -library "interrupt_reader_interface_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/interrupt_reader_interface_0.v"]
+

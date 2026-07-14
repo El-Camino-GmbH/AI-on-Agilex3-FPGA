@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/csi2_dphy_sys_rx_axi4s_clk_bridge.v"
+   type="VERILOG"
+   library="csi2_dphy_sys_rx_axi4s_clk_bridge"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="csi2_dphy_sys_rx_axi4s_clk_bridge.csi2_dphy_sys_rx_axi4s_clk_bridge" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

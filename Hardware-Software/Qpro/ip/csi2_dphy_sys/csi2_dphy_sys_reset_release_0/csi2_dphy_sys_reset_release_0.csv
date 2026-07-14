@@ -1,0 +1,18 @@
+# system info csi2_dphy_sys_reset_release_0 on 2026.03.17.13:39:37
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for csi2_dphy_sys_reset_release_0 on 2026.03.17.13:39:37
+files:
+filepath,kind,attributes,module,is_top
+sim/csi2_dphy_sys_reset_release_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,csi2_dphy_sys_reset_release_0,true
+intel_user_rst_clkgate_101/sim/intel_user_rst_clkgate.sv,SYSTEM_VERILOG,,intel_user_rst_clkgate,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+csi2_dphy_sys_reset_release_0.reset_release_0,intel_user_rst_clkgate

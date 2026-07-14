@@ -1,0 +1,307 @@
+/***********************************************************************
+* 
+************************************************************************/
+
+module AXC3000_MIPI (
+
+// Push Button
+input         USER_BTN,
+
+// UART pin
+input         UART_RXD,
+output        UART_TXD,
+
+// DIP switches
+//input [1:0]   DIP_SW,
+
+// LEDs
+output        RLED, GLED, BLED,
+output reg    LED1,
+
+// Arduino MKR
+//inout [14:0]  D,
+//inout         D11_R, D12_R,
+//inout [6:0]   AIN,
+//output        AIN0,
+//inout         AREF,
+//output        AREF,
+
+// Accelerometer
+//input         INT1, INT2,			// Need internal pull-up?
+//inout         I2C_SCL, I2C_SDA,
+// CRUVI pins (MIPI)
+//input         C_B5P,  C_B1P, C_B0P,
+input         MIPI_D1P, MIPI_D0P, MIPI_CLKP,
+input         MIPI_D1N, MIPI_D0N, MIPI_CLKN,
+
+
+//output        C_A5P, C_A4P, C_A3P, C_A2P, C_A1P, C_A0P,
+input         MIPI_RZQ,
+input         MIPI_REFCLK, 
+inout           CAMERA_SDA, CAMERA_SCL,
+output          CAMERA_EN,
+//inout         C_HSMIO,
+//inout         C_HSO, C_HSRST, C_HSI,
+//inout         C_REFCLK,
+
+// HyperRAM
+//inout [7:0]   HR_DQ,
+//output        HR_CLK,
+//output        HR_RWDS, HR_HRESETn, HR_CSn,
+
+// Global Signals
+output        VSEL_1V3,		// VADJ selector between 1.2V and 1.3V
+input         CLK_25M_C
+
+
+);
+
+// Sign of Life Counter 
+reg [23:0]  counter4led;		// 6.4ns led_clk
+wire        counter_expired;
+assign      counter_expired = (counter4led[23:22] == 2'b11);
+
+// Select 1.3V for HSIO
+assign VSEL_1V3 = 1'b1;
+
+
+
+
+/******************************************************************************/
+
+    //----CSI2/PHY              
+    wire [63:0] csi2_rx_video_streaming_interface_0_tdata /*synthesis keep*/;                   
+    wire        csi2_rx_video_streaming_interface_0_tvalid /*synthesis keep*/;                  
+    wire        csi2_rx_video_streaming_interface_0_tready /*synthesis keep*/;                  
+    wire        csi2_rx_video_streaming_interface_0_tlast /*synthesis keep*/;                   
+    wire [3:0]  csi2_rx_video_streaming_interface_0_tuser /*synthesis keep*/;   
+
+    wire [3:0] cmd         ;    
+    wire [15:0]cmd_param0  ;  
+    wire [15:0]cmd_param1  ; 
+    wire       cmd_start   ;  
+    wire       cmd_done    ;  
+    wire       cmd_done_err;
+    wire [3:0] rcmd         ;  
+    wire [15:0]rcmd_param0  ;  
+    wire [15:0]rcmd_param1  ; 
+    wire       rcmd_start   ;  
+    wire       rcmd_done    ;  
+    wire       rcmd_done_err;
+
+    // camera i2c bus
+    `define CAM_I2C_SCL     CAMERA_SCL
+    `define CAM_I2C_SDA     CAMERA_SDA
+    `define CAM_PWREN       CAMERA_EN
+    //`define CAM_D_p         MIPI_DP
+    //`define CAM_D_n         MIPI_DN
+    //`define CAM_CLK_p       MIPI_CLKP
+    //`define CAM_CLK_n       MIPI_CLKN
+
+
+    assign `CAM_PWREN = 1;
+
+    //--RESET 	
+//    wire reset_n;
+//    assign reset_n = ~USER_BTN;	
+
+    wire CLK_50MHz, CLK_100MHz, CLK_148MHz;
+
+    PLL PLL_inst (
+        .refclk   (CLK_25M_C),   //   input,  width = 1,  refclk.clk
+        //.locked   (_connected_to_locked_),   //  output,  width = 1,  locked.export
+        .rst      (iopll_rst),      //   input,  width = 1,   reset.reset
+        .outclk_0 (CLK_50MHz), //  output,  width = 1, outclk0.clk
+        .outclk_1 (CLK_100MHz), //  output,  width = 1, outclk1.clk
+        .outclk_2 (CLK_148MHz) //  output,  width = 1, outclk2.clk
+    );
+
+	 reg iopll_rst =1; 
+	 always @(posedge CLK_25M_C ) iopll_rst <=0;
+	 
+	 
+	 reg [9:0] clk_div_cnt    = 10'd0;
+	 localparam cnt_num = 10'd500;
+	 reg       CLK_100KHz_reg = 1'b0; 
+	 
+	 always @(posedge CLK_100MHz) begin
+		 if (clk_div_cnt == cnt_num - 10'd1) begin
+			  clk_div_cnt    <= 10'd0;           // reset counter
+			  CLK_100KHz_reg     <= ~CLK_100KHz_reg; // toggle output
+		 end else begin
+			  clk_div_cnt <= clk_div_cnt + 10'd1;
+		 end
+	 end
+	 
+	 wire CLK_100KHz = CLK_100KHz_reg;
+	 
+    //---IMX519_AK7375 RESET ----  
+    //---INIT RESET 
+
+    wire ninit_done;
+    wire RESET_DELY_RESET_N;
+    wire RESET_N_DELAY ; 
+    wire IMX519_AK7375_RESET_N;
+    wire IMX519_AK7375_ctl_RESET_N;
+
+    ResetRelease ResetRelease_inst (
+        .ninit_done (ninit_done)  
+    );
+        
+    //--RESET 	
+    wire reset_n;
+    assign reset_n = ~ninit_done;	
+
+    altera_std_synchronizer #(
+        .depth      (3)
+    ) RESET_DELY_sync (
+        .clk        (CLK_50MHz), 
+        .reset_n    (1'b1),
+        .din        (reset_n), 
+        .dout       (RESET_DELY_RESET_N)
+    );
+
+    RESET_DELY  RESET_DELY_inst(
+            .BUTTON_N     ( RESET_DELY_RESET_N  ),
+            .OSC          ( CLK_50MHz ) , 
+            .RESET_n      ( RESET_N_DELAY)  
+    );
+
+    altera_std_synchronizer #(
+        .depth      (3)
+    ) IMX519_AK7375_sync (
+        .clk        (CLK_50MHz), 
+        .reset_n    (1'b1),
+        .din        (RESET_N_DELAY), 
+        .dout       (IMX519_AK7375_RESET_N)
+    );
+
+    altera_std_synchronizer #(
+        .depth      (3)
+    ) IMX519_AK7375_ctl_sync (
+        .clk        (CLK_148MHz), 
+        .reset_n    (1'b1),
+        .din        (RESET_N_DELAY), 
+        .dout       (IMX519_AK7375_ctl_RESET_N)
+    );
+
+
+
+    fffio u_fifo( //<-----timing for different clock domain  //40bit wigth
+            /*input  wire [7:0] */.data     ( { cmd_param1 , cmd_param0, cmd, cmd_start}),     
+            /*output wire [7:0] */.q        ( { rcmd_param1,rcmd_param0,rcmd,rcmd_start}),        
+            /*input  wire [0:0] */.wraddress(0), 
+            /*input  wire [0:0] */.rdaddress(0), 
+            /*input  wire       */.wren     (1), 
+            /*input  wire       */.wrclock  (CLK_148MHz ),  
+            /*input  wire       */.rdclock  (CLK_100KHz )  
+        );
+        
+    fffio2 u_fifo2( //<-----timing for different clock domain  //40bit wigth
+            /*input  wire [1:0] */.data     ( {  rcmd_done, rcmd_done_err} ),     
+            /*output wire [1:0] */.q        ( {  cmd_done, cmd_done_err}   ),        
+            /*input  wire [0:0] */.wraddress(0), 
+            /*input  wire [0:0] */.rdaddress(0), 
+            /*input  wire       */.wren     (1), 
+            /*input  wire       */.rdclock  (CLK_148MHz ),  
+            /*input  wire       */.wrclock  (CLK_100KHz )  
+        );	
+
+    IMX519_AK7375  IMX519_AK7375_inst (
+        .CLK_400K    (CLK_100KHz      ),
+        .reset_n     (IMX519_AK7375_RESET_N),
+        .i2c_clk     (`CAM_I2C_SCL   ),
+        .i2c_dat     (`CAM_I2C_SDA   ),
+        //
+        .cmd         (rcmd         ),     
+        .cmd_param0  (rcmd_param0  ), 
+        .cmd_param1  (rcmd_param1  ), 
+        .cmd_start   (rcmd_start   ),
+        .cmd_done    (rcmd_done    ),   
+        .cmd_done_err(rcmd_done_err)
+    );
+
+	//------new AOTO FOCUS ADJ------	 
+	wire [15:0]  VCM_DATA;   
+	wire         VCM_END;    
+	wire [2:0]   KEY;    
+	wire [31:0]  MIPI_AUTO;    
+
+	assign VCM_DATA = MIPI_AUTO[15:0];
+	assign VCM_END  = MIPI_AUTO[16];
+	assign KEY      = MIPI_AUTO[26:24];
+
+	IMX519_AK7375_ctl IMX519_AK7375_ctl_inst (
+        .iCLK         (CLK_148MHz  ),
+        .iRST_N       (IMX519_AK7375_ctl_RESET_N),
+        .iKEY         (KEY          ),
+        .oCMD         (cmd          ),   
+        .oCMD_PARAM0  (cmd_param0   ),   
+        .oCMD_PARAM1  (cmd_param1   ),   
+        .oCMD_START   (cmd_start    ),   
+        .iCMD_DONE    (cmd_done     ),    
+        .iCMD_DONE_ERR(cmd_done_err ),
+
+        // Auto color blance parameter input
+        .iBLUE_GAIN   (16'h0213),//default
+        .iRED_GAIN    (16'h01bc),//default
+
+        // Auto foucus parameter input
+        .iVCM_DATA    (VCM_DATA),
+        .iVCM_END     (VCM_END )
+    );
+
+
+	csi2_dphy_sys mipi_system_inst (
+		.csi2_rx_video_streaming_interface_0_tdata         (csi2_rx_video_streaming_interface_0_tdata),         //  output,  width = 64,           csi2_rx_video_streaming_interface_0.tdata
+      .csi2_rx_video_streaming_interface_0_tvalid        (csi2_rx_video_streaming_interface_0_tvalid),        //  output,   width = 1,                                              .tvalid
+      .csi2_rx_video_streaming_interface_0_tready        (csi2_rx_video_streaming_interface_0_tready),        //   input,   width = 1,                                              .tready
+      .csi2_rx_video_streaming_interface_0_tlast         (csi2_rx_video_streaming_interface_0_tlast),         //  output,   width = 1,                                              .tlast
+      .csi2_rx_video_streaming_interface_0_tuser         (csi2_rx_video_streaming_interface_0_tuser),         //  output,   width = 8,                                              .tuser
+        
+		.mipi_dphy_rzq_rzq                                 (MIPI_RZQ),             //   input,   width = 1,                                 mipi_dphy_rzq.rzq
+      .mipi_dphy_ref_clk_0_clk                           (MIPI_REFCLK),          //   input,   width = 1,                           mipi_dphy_ref_clk_0.clk
+        
+		.mipi_dphy_LINK0_dphy_io_dphy_link_dp              ({MIPI_D1P, MIPI_D0P}),              //   input,   width = 2,                       mipi_dphy_LINK0_dphy_io.dphy_link_dp
+      .mipi_dphy_LINK0_dphy_io_dphy_link_dn              ({MIPI_D1N, MIPI_D0N}),              //   input,   width = 2,                                              .dphy_link_dn
+      .mipi_dphy_LINK0_dphy_io_dphy_link_cp              (MIPI_CLKP),            //   input,   width = 1,                                              .dphy_link_cp
+      .mipi_dphy_LINK0_dphy_io_dphy_link_cn              (MIPI_CLKN),            //   input,   width = 1,                                              .dphy_link_cn
+        
+		.rx_axi4s_clk_bridge_in_clk_clk                    (CLK_100MHz)            //   input,   width = 1,                    rx_axi4s_clk_bridge_in_clk.clk
+    );
+	
+
+    ai_control ai_control_inst (
+        .clk_clk                                                  (CLK_100MHz),                                      //   input,   width = 1,                                             clk.clk
+        .reset_reset                                              (~reset_n),                                        //   input,   width = 1,                                           reset.reset
+         
+        .mipi_control_pio_0_external_connection_export            (MIPI_AUTO),          										//  output,  width = 32,          mipi_control_pio_0_external_connection.export
+
+        .video_path_0_axi4s_vid_in_tdata       (csi2_rx_video_streaming_interface_0_tdata),       //   input,  width = 64,    video_path_0_mipi_broadcaster_0_axi4s_vid_in.tdata
+        .video_path_0_axi4s_vid_in_tvalid      (csi2_rx_video_streaming_interface_0_tvalid),      //   input,   width = 1,                                                .tvalid
+        .video_path_0_axi4s_vid_in_tready      (csi2_rx_video_streaming_interface_0_tready),      //  output,   width = 1,                                                .tready
+        .video_path_0_axi4s_vid_in_tlast       (csi2_rx_video_streaming_interface_0_tlast),       //   input,   width = 1,                                                .tlast
+        .video_path_0_axi4s_vid_in_tuser       (csi2_rx_video_streaming_interface_0_tuser)        //   input,   width = 8,                                                .tuser
+    );
+
+
+
+
+
+/******************************************************************************/
+
+
+// LED counter 
+always @ (posedge CLK_148MHz) begin
+	 if (counter_expired) begin
+	   counter4led <= 24'h0;
+		LED1 <= !LED1;
+	 end
+	 else begin
+	   counter4led <= counter4led + 24'h01;
+		LED1 <= LED1;
+	 end
+end
+
+
+endmodule

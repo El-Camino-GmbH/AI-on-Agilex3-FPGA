@@ -1,0 +1,19 @@
+	component interrupt_reader_interface_0 is
+		port (
+			clk               : in  std_logic                     := 'X';             -- clk
+			reset             : in  std_logic                     := 'X';             -- reset
+			avm_address       : out std_logic_vector(31 downto 0);                    -- address
+			avm_read          : out std_logic;                                        -- read
+			avm_readdata      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			avm_waitrequest   : in  std_logic                     := 'X';             -- waitrequest
+			avm_readdatavalid : in  std_logic                     := 'X';             -- readdatavalid
+			irq               : in  std_logic                     := 'X';             -- irq
+			result_data       : out std_logic_vector(31 downto 0);                    -- result_data
+			result_valid      : out std_logic;                                        -- result_valid
+			cycle_count       : out std_logic_vector(31 downto 0);                    -- cycle_count
+			cycle_count_valid : out std_logic;                                        -- cycle_count_valid
+			error_timeout     : out std_logic;                                        -- error_timeout
+			error_clear       : in  std_logic                     := 'X'              -- error_clear
+		);
+	end component interrupt_reader_interface_0;
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="intel_user_rst_clkgate_101/sim/intel_user_rst_clkgate.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_user_rst_clkgate_101" />
+ <file
+   path="sim/ResetRelease.v"
+   type="VERILOG"
+   library="ResetRelease"
+   hasInlineConfiguration="true" />
+ <topLevel name="ResetRelease.ResetRelease" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

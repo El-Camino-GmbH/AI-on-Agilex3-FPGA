@@ -1,0 +1,16 @@
+# system info csi2_dphy_sys_rx_axi4s_clk_bridge on 2026.03.17.13:39:42
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for csi2_dphy_sys_rx_axi4s_clk_bridge on 2026.03.17.13:39:42
+files:
+filepath,kind,attributes,module,is_top
+sim/csi2_dphy_sys_rx_axi4s_clk_bridge.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,csi2_dphy_sys_rx_axi4s_clk_bridge,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

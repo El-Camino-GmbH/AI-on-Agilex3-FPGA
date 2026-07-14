@@ -1,0 +1,45 @@
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TOP_LEVEL_COMPONENT_NAME "one_ai_interface"
+set_global_assignment -library "one_ai_interface_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "one_ai_interface_0.sopcinfo"]
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name SLD_INFO "QSYS_NAME one_ai_interface_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "one_ai_interface_0" -name MISC_FILE [file join $::quartus(qip_path) "one_ai_interface_0.cmp"]
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "one_ai_interface_0" -name MISC_FILE [file join $::quartus(qip_path) "../one_ai_interface_0.ip"]
+
+set_global_assignment -entity "ONE_AI_Interface" -library "one_ai_interface_10" -name IP_COMPONENT_NAME "T05FX0FJX0ludGVyZmFjZQ=="
+set_global_assignment -entity "ONE_AI_Interface" -library "one_ai_interface_10" -name IP_COMPONENT_DISPLAY_NAME "T05FX0FJX0ludGVyZmFjZQ=="
+set_global_assignment -entity "ONE_AI_Interface" -library "one_ai_interface_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "ONE_AI_Interface" -library "one_ai_interface_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "ONE_AI_Interface" -library "one_ai_interface_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_NAME "b25lX2FpX2ludGVyZmFjZV8w"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "one_ai_interface_0" -library "one_ai_interface_0" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/ONEAI_Config_Package.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/ONEAI_Data_Package.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/ONEAI_Top.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/ONE_AI_Interface.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Convolution.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Normalization.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Pooling_Efficient.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Row_Buffer.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Row_Expander.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/CNN_Upscaling.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/NN_Layer.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/Crop_Filter.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/Inverse_Filter.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/Normalize_Filter.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/Reduce_To_Brightness.vhd"]
+set_global_assignment -library "one_ai_interface_10" -name VHDL_FILE [file join $::quartus(qip_path) "one_ai_interface_10/synth/Threshold_Filter.vhd"]
+set_global_assignment -library "one_ai_interface_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/one_ai_interface_0.v"]
+

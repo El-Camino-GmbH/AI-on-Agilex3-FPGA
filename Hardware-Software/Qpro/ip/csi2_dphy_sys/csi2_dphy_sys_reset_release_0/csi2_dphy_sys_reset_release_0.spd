@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="intel_user_rst_clkgate_101/sim/intel_user_rst_clkgate.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_user_rst_clkgate_101" />
+ <file
+   path="sim/csi2_dphy_sys_reset_release_0.v"
+   type="VERILOG"
+   library="csi2_dphy_sys_reset_release_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="csi2_dphy_sys_reset_release_0.csi2_dphy_sys_reset_release_0" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

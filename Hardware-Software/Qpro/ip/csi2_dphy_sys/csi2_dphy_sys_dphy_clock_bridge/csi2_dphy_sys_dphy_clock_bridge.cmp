@@ -1,0 +1,7 @@
+	component csi2_dphy_sys_dphy_clock_bridge is
+		port (
+			in_clk  : in  std_logic := 'X'; -- clk
+			out_clk : out std_logic         -- clk
+		);
+	end component csi2_dphy_sys_dphy_clock_bridge;
+

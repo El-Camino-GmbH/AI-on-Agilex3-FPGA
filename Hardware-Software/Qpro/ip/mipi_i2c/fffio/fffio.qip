@@ -1,0 +1,53 @@
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TOP_LEVEL_COMPONENT_NAME "ram_2port"
+set_global_assignment -entity "fffio" -library "fffio" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "fffio" -library "fffio" -name OCS_IP_FILE [file join $::quartus(qip_path) "../fffio.ip"]
+set_global_assignment -entity "fffio" -library "fffio" -name OCS_IP_TYPE "ram_2port"
+set_global_assignment -entity "fffio" -library "fffio" -name OCS_IP_VERSION "20.6.0"
+set_global_assignment -entity "fffio" -library "fffio" -name OCS_IP_HASH "5ylhmnq"
+set_global_assignment -library "fffio" -name SOPCINFO_FILE [file join $::quartus(qip_path) "fffio.sopcinfo"]
+set_global_assignment -entity "fffio" -library "fffio" -name SLD_INFO "QSYS_NAME fffio HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "fffio" -name MISC_FILE [file join $::quartus(qip_path) "fffio.cmp"]
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_TARGETED_PART_TRAIT "BASE_DEVICE::SM4REVB"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "fffio" -name MISC_FILE [file join $::quartus(qip_path) "../fffio.ip"]
+
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_NAME "ZmZmaW9fcmFtXzJwb3J0XzIwNjBfNXlsaG1ucQ=="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DISPLAY_NAME "UkFNOiAyLVBPUlQgRlBHQSBJUA=="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_VERSION "MjAuNi4w"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DESCRIPTION "VGhlIFJBTTogMi1QT1JUIEZQR0EgSVAgYWxsb3dzIHlvdSB0byBpbXBsZW1lbnQgU2ltcGxlIGR1YWwtcG9ydCBSQU0gb3IgVHJ1ZSBkdWFsLXBvcnQgUkFN"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL09uIENoaXAgTWVtb3J5"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzgyOC8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4Mzc3MS8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzE4MS8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzMwMS8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzgxMzkxOC8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzI0MC8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzQyMy8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzI0MS8="
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzY4MzExMC8="
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_NAME "ZmZmaW8="
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "fffio" -library "fffio" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "ram_2port_2060" -name VERILOG_FILE [file join $::quartus(qip_path) "ram_2port_2060/synth/fffio_ram_2port_2060_5ylhmnq.v"]
+set_global_assignment -library "fffio" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/fffio.v"]
+
+
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_TOOL_NAME "ram_2port"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_TOOL_VERSION "20.6.0"
+set_global_assignment -entity "fffio_ram_2port_2060_5ylhmnq" -library "ram_2port_2060" -name IP_TOOL_ENV "QsysPrimePro"
+

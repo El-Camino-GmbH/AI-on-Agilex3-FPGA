@@ -1,0 +1,13 @@
+	component ai_control is
+		port (
+			clk_clk                                       : in  std_logic                     := 'X';             -- clk
+			mipi_control_pio_0_external_connection_export : out std_logic_vector(31 downto 0);                    -- export
+			reset_reset                                   : in  std_logic                     := 'X';             -- reset
+			video_path_0_axi4s_vid_in_tdata               : in  std_logic_vector(63 downto 0) := (others => 'X'); -- tdata
+			video_path_0_axi4s_vid_in_tvalid              : in  std_logic                     := 'X';             -- tvalid
+			video_path_0_axi4s_vid_in_tready              : out std_logic;                                        -- tready
+			video_path_0_axi4s_vid_in_tlast               : in  std_logic                     := 'X';             -- tlast
+			video_path_0_axi4s_vid_in_tuser               : in  std_logic_vector(7 downto 0)  := (others => 'X')  -- tuser
+		);
+	end component ai_control;
+

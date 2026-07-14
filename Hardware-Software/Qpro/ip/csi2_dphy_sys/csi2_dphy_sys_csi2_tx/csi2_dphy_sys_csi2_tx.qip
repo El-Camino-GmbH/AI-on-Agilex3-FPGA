@@ -1,0 +1,245 @@
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TOP_LEVEL_COMPONENT_NAME "intel_mipi_csi2"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name OCS_IP_FILE [file join $::quartus(qip_path) "../csi2_dphy_sys_csi2_tx.ip"]
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name OCS_IP_TYPE "intel_mipi_csi2"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name OCS_IP_VERSION "3.0.0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name OCS_IP_HASH "sjb35xa"
+set_global_assignment -library "csi2_dphy_sys_csi2_tx" -name SOPCINFO_FILE [file join $::quartus(qip_path) "csi2_dphy_sys_csi2_tx.sopcinfo"]
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name SLD_INFO "QSYS_NAME csi2_dphy_sys_csi2_tx HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "csi2_dphy_sys_csi2_tx" -name MISC_FILE [file join $::quartus(qip_path) "csi2_dphy_sys_csi2_tx.cmp"]
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_TARGETED_DEVICE_FAMILY "Agilex 5"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 5}"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "csi2_dphy_sys_csi2_tx" -name MISC_FILE [file join $::quartus(qip_path) "../csi2_dphy_sys_csi2_tx.ip"]
+
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_NAME "aW50ZWxfdnZwX2lucHV0X2ludGVyZmFjZV9icmlkZ2U="
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_DISPLAY_NAME "SW5wdXQgaW50ZXJmYWNlIGJyaWRnZQ=="
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_VERSION "MjQuNC4w"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_DESCRIPTION "SW5wdXQgaW50ZXJmYWNlIGJyaWRnZSBmb3IgVlZQIGNvcmVz"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9Db21wb25lbnQgTGlicmFyeQ=="
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_NAME "aW50ZWxfYXhpMmN2X3NjaGVkdWxlcg=="
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_DISPLAY_NAME "QVhJMkNWIHNjaGVkdWxlciBJbnRlbCBGUEdBIElQ"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_VERSION "MjEuNC4w"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_DESCRIPTION "U2NoZWR1bGVyIGZvciB0aGUgQVhJMkNWIGNvbXBvbmVudA=="
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9Db21wb25lbnQgTGlicmFyeQ=="
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_NAME "aW50ZWxfYXhpMmN2X2NvcmU="
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_DISPLAY_NAME "aW50ZWxfYXhpMmN2X2NvcmU="
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_VERSION "MjEuNC4w"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9Db21wb25lbnQgTGlicmFyeQ=="
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2ludGVsX3Z2cF9yb19yZWdfc2VydmljZXJfMjQ1MF9zbTQyZGJp"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_DISPLAY_NAME "Um8gUmVnIFNlcnZpY2Vy"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_VERSION "MjQuNS4w"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9Db21wb25lbnQgTGlicmFyeQ=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_NAME "YWx0ZXJhX3Jlc2V0X2NvbnRyb2xsZXI="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_DISPLAY_NAME "TWVybGluIFJlc2V0IENvbnRyb2xsZXIgSVA="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_VERSION "MTkuMi40"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_DESCRIPTION "Rm9yIHN5c3RlbXMgd2l0aCBtdWx0aXBsZSByZXNldCBpbnB1dHMsIHRoZSBNZXJsaW4gUmVzZXQgQ29udHJvbGxlciBPUnMgYWxsIHJlc2V0IGlucHV0cyBhbmQgZ2VuZXJhdGVzIGEgc2luZ2xlIHJlc2V0IG91dHB1dC4="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL0Nsb2NrczsgUExMcyBhbmQgUmVzZXRz"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL3pjbjE1MTM5ODcyODI5MzUuaHRtbCNtd2gxNDA5OTU4ODI4NzMy"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvZGFtL3d3dy9wcm9ncmFtbWFibGUvdXMvZW4vcGRmcy9saXRlcmF0dXJlL3VnL3VnLXFwcC1wbGF0Zm9ybS1kZXNpZ25lci5wZGY="
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2hjbzE0MTY4MzYxNDU1NTUuaHRtbCNoY28xNDE2ODM2NjUzMjIx"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2FsdGVyYV9tZXJsaW5fbWFzdGVyX3RyYW5zbGF0b3JfMTkzX2xnY2V3MnE="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_DISPLAY_NAME "QXZhbG9uIE1lbW9yeSBNYXBwZWQgTWFzdGVyIFRyYW5zbGF0b3IgSVA="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_VERSION "MTkuMw=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_DESCRIPTION "Q29udmVydHMgdGhlIEF2YWxvbiBNZW1vcnkgTWFwcGVkIG1hc3RlciBpbnRlcmZhY2UgdG8gYSBzaW1wbGVyIHJlcHJlc2VudGF0aW9uIHRoYXQgdGhlIFFzeXMgbmV0d29yayB1c2VzLiBSZWZlciB0byB0aGUgQXZhbG9uIEludGVyZmFjZSBTcGVjaWZpY2F0aW9ucyAoaHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvbWFudWFsL21ubF9hdmFsb25fc3BlYy5wZGYpIGZvciBkZWZpbml0aW9ucyBvZiB0aGUgQXZhbG9uIE1lbW9yeSBNYXBwZWQgc2lnbmFscyBhbmQgZXhwbGFuYXRpb25zIG9mIHRoZSBidXJzdGluZyBwcm9wZXJ0aWVzLg=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_GROUP "SW50ZWwgRlBHQSBJbnRlcmNvbm5lY3QvTWVtb3J5LU1hcHBlZA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvaGIvcXRzL3FzeXNfaW50ZXJjb25uZWN0LnBkZg=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvZGFtL3d3dy9wcm9ncmFtbWFibGUvdXMvZW4vcGRmcy9saXRlcmF0dXJlL3VnL3VnLXFwcC1wbGF0Zm9ybS1kZXNpZ25lci5wZGY="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2hjbzE0MTY4MzYxNDU1NTUuaHRtbCNoY28xNDE2ODM2NjUzMjIx"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2FsdGVyYV9tZXJsaW5fc2xhdmVfdHJhbnNsYXRvcl8xOTFfeGc3cnp4aQ=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_DISPLAY_NAME "QXZhbG9uIE1lbW9yeSBNYXBwZWQgU2xhdmUgVHJhbnNsYXRvciBJUA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_VERSION "MTkuMQ=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_DESCRIPTION "Q29udmVydHMgdGhlIEF2YWxvbiBNZW1vcnkgTWFwcGVkIHNsYXZlIGludGVyZmFjZSB0byBhIHNpbXBsaWZpZWQgcmVwcmVzZW50YXRpb24gdGhhdCB0aGUgUXN5cyBuZXR3b3JrIHVzZXMuIFJlZmVyIHRvIHRoZSBBdmFsb24gSW50ZXJmYWNlIFNwZWNpZmljYXRpb25zIChodHRwOi8vd3d3LmFsdGVyYS5jb20vbGl0ZXJhdHVyZS9tYW51YWwvbW5sX2F2YWxvbl9zcGVjLnBkZikgZm9yIGRlZmluaXRpb25zIG9mIHRoZSBBdmFsb24gTWVtb3J5IE1hcHBlZCBzaWduYWxzIGFuZCBleHBsYW5hdGlvbnMgb2YgdGhlIGJ1cnN0aW5nIHByb3BlcnRpZXMgYW5kIGFkZHJlc3MgYWxpZ25tZW50Lg=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_GROUP "SW50ZWwgRlBHQSBJbnRlcmNvbm5lY3QvTWVtb3J5LU1hcHBlZA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvaGIvcXRzL3FzeXNfaW50ZXJjb25uZWN0LnBkZg=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvZGFtL3d3dy9wcm9ncmFtbWFibGUvdXMvZW4vcGRmcy9saXRlcmF0dXJlL3VnL3VnLXFwcC1wbGF0Zm9ybS1kZXNpZ25lci5wZGY="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2hjbzE0MTY4MzYxNDU1NTUuaHRtbCNoY28xNDE2ODM2NjUzMjIx"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2FsdGVyYV9tbV9pbnRlcmNvbm5lY3RfMTkyMF90dGdiMnZx"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_DISPLAY_NAME "TU0gSW50ZXJjb25uZWN0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_VERSION "MTkuMi4w"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_DESCRIPTION "TU0gSW50ZXJjb25uZWN0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_COMPONENT_GROUP "TWVybGluIENvbXBvbmVudHM="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2ludGVsX2F4aTJjdl8yMTQwXzMzYmh4cnE="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_DISPLAY_NAME "QVhJMkNWIEludGVsIEZQR0EgSVA="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_VERSION "MjEuNC4w"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_DESCRIPTION "QVhJMkNWIEludGVsIEZQR0EgSVA="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZw=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2ludGVsX21pcGlfY3NpMl9pbnRlbF9heGkyY3ZfMzAwX3M0NGdpZHE="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DISPLAY_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2ludGVsX21pcGlfY3NpMl9pbnRlbF9heGkyY3ZfMzAwX3M0NGdpZHE="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq" -library "intel_mipi_csi2_300" -name IP_COMPONENT_VERSION "My4wLjA="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4X2ludGVsX21pcGlfY3NpMl8zMDBfc2piMzV4YQ=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DISPLAY_NAME "TUlQSSBDU0ktMiBJUA=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_VERSION "My4wLjA="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DESCRIPTION "TUlQSSBDU0ktMiBpcyBhbiBpbnRlcmZhY2UgcHJvdG9jb2wgdXNlZCBwcmltYXJpbHkgZm9yIGNvbm5lY3Rpb25zIHdpdGggaW1hZ2Ugc2Vuc29ycyBhbmQgZG93bnN0cmVhbSBicmlkZ2luZyBhcHBsaWNhdGlvbnMuIFRoaXMgSVAgaW5jbHVkZXMgUmVjZWl2ZSBhbmQgVHJhbnNtaXQgaW1wbGVtZW50YXRpb25zIGFuZCBpcyBjb25maWd1cmFibGUgZm9yIGludGVyZmFjZSBwcm9wZXJ0aWVzLCB2aXJ0dWFsIGNoYW5uZWxzIGFuZCB2aWRlbyBkYXRhIHR5cGUgc3VwcG9ydC4gIERQSFkgaW50ZXJmYWNlcyBjb21wbHkgd2l0aCB0aGUgTUlQSSBQSFktUHJvdG9jb2wgSW50ZXJmYWNlIChQUEkpIHN0YW5kYXJkIGFuZCBhcmUgZGVzaWduZWQgdG8gaW50ZXJmYWNlIHRvIHRoZSBBbHRlcmEgTUlQSSBEUEhZIElQLiAgVmlkZW8gaW50ZXJmYWNlcyBhcmUgY29tcGF0aWJsZSB3aXRoIHRoZSBBWEk0LVN0cmVhbSBBbHRlcmEgVmlkZW8gU3RyZWFtaW5nIFByb3RvY29sLg=="
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_GROUP "SW50ZXJmYWNlIFByb3RvY29scy9BdWRpbyAmIFZpZGVv"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzgyMDk5My5odG1s"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzgxMzkyNi5odG1s"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL2RvY3MvcHJvZ3JhbW1hYmxlLzgxMzkzMS5odG1s"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_NAME "Y3NpMl9kcGh5X3N5c19jc2kyX3R4"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx" -library "csi2_dphy_sys_csi2_tx" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "intel_vvp_input_interface_bridge_2440" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_input_interface_bridge_2440/synth/intel_vvp_common_pkg.sv"]
+set_global_assignment -library "intel_vvp_input_interface_bridge_2440" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_input_interface_bridge_2440/synth/intel_vvp_axi_pipeline_stage.sv"]
+set_global_assignment -library "intel_vvp_input_interface_bridge_2440" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_input_interface_bridge_2440/synth/intel_vvp_axi_master.sv"]
+set_global_assignment -library "intel_vvp_input_interface_bridge_2440" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_input_interface_bridge_2440/synth/src_hdl/intel_vvp_input_interface_bridge.sv"]
+set_global_assignment -library "intel_axi2cv_scheduler_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_scheduler_2140/synth/intel_vab_common_pkg.sv"]
+set_global_assignment -library "intel_axi2cv_scheduler_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_scheduler_2140/synth/intel_vab_axi_pipeline_stage.sv"]
+set_global_assignment -library "intel_axi2cv_scheduler_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_scheduler_2140/synth/intel_vab_axi_master.sv"]
+set_global_assignment -library "intel_axi2cv_scheduler_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_scheduler_2140/synth/src_hdl/intel_axi2cv_scheduler.sv"]
+set_global_assignment -library "intel_axi2cv_scheduler_2140" -name SOURCE_FILE [file join $::quartus(qip_path) "intel_axi2cv_scheduler_2140/synth/src_hdl/intel_axi2cv_scheduler.ocp"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_common_pkg.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_ext_interlace_toggle.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_pipelined_mux.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_common_slave_interface.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_flop_primitive.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_synchronizer_flop.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_clock_crosser.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_axi_master.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_vab_axi_pipeline_stage.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_aux_in.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_calculate_mode.v"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_controller.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_core.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_csr.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_frame_counter.v"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_generic_step_count.v"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_mode_banks.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_packet_arbiter.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_trigger_sync.v"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_sdi_resampler.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_statemachine.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_stream_marker.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_sync_compare.v"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_sync_conditioner.sv"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_sync_generation.sv"]
+set_instance_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name SDC_ENTITY_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/intel_axi2cv_core.sdc"]
+set_global_assignment -library "intel_axi2cv_core_2140" -name SOURCE_FILE [file join $::quartus(qip_path) "intel_axi2cv_core_2140/synth/src_hdl/intel_axi2cv_core.ocp"]
+set_global_assignment -library "intel_vvp_ro_reg_servicer_2450" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_ro_reg_servicer_2450/synth/intel_vvp_common_pkg.sv"]
+set_global_assignment -library "intel_vvp_ro_reg_servicer_2450" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_ro_reg_servicer_2450/synth/src_hdl/intel_vvp_ro_reg_servicer.sv"]
+set_global_assignment -library "intel_vvp_ro_reg_servicer_2450" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_ro_reg_servicer_2450/synth/csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi.sv"]
+set_global_assignment -library "altera_reset_controller_1924" -name VERILOG_FILE [file join $::quartus(qip_path) "altera_reset_controller_1924/synth/altera_reset_controller.v"]
+set_global_assignment -library "altera_reset_controller_1924" -name VERILOG_FILE [file join $::quartus(qip_path) "altera_reset_controller_1924/synth/altera_reset_synchronizer.v"]
+set_instance_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name SDC_ENTITY_FILE [file join $::quartus(qip_path) "altera_reset_controller_1924/synth/altera_reset_controller.sdc"] -no_sdc_promotion 
+set_global_assignment -library "altera_merlin_master_translator_193" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_merlin_master_translator_193/synth/csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q.sv"]
+set_global_assignment -library "altera_merlin_slave_translator_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_merlin_slave_translator_191/synth/csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi.sv"]
+set_global_assignment -library "altera_mm_interconnect_1920" -name VERILOG_FILE [file join $::quartus(qip_path) "altera_mm_interconnect_1920/synth/csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq.v"]
+set_global_assignment -library "intel_axi2cv_2140" -name VERILOG_FILE [file join $::quartus(qip_path) "intel_axi2cv_2140/synth/csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq.v"]
+set_global_assignment -library "intel_mipi_csi2_300" -name VERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/csi2_dphy_sys_csi2_tx_intel_mipi_csi2_intel_axi2cv_300_s44gidq.v"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_pkg.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/vvp_pkg.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/axis_if.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/avalon_mm_if.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/vid_if.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_csi2_tx_csr.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_axis_fifo.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_cdc.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_common_slave_interface.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_crc.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_csr_ctrl_mux.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_csr_interrupt.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_dphy_ppi_if.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_ecc_parity_gen.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_ecc_syndrome_decoder.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_fifo.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_packet_arbiter.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_pipelined_mux.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_pixel_barrel_shifter.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_prbs_gen_lane.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_reset_sync.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_ro_reg_servicer.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_skid_buffer.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_vab_axi_master.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_vab_axi_pipeline_stage.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_axi2cv_aux_in.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_ecc.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_generic_sp.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_lane_distributor.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_packetizer.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_pixel_to_byte_converter.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_ppi.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SOURCE_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_protocol.ocp"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_protocol.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/mipi_tx_scrambler.sv"]
+set_global_assignment -library "intel_mipi_csi2_300" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_mipi_csi2_300/synth/csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa.sv"]
+set_global_assignment -library "csi2_dphy_sys_csi2_tx" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/csi2_dphy_sys_csi2_tx.v"]
+
+
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_TOOL_NAME "intel_mipi_csi2"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_TOOL_VERSION "3.0.0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_mipi_csi2_300_sjb35xa" -library "intel_mipi_csi2_300" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_TOOL_NAME "intel_axi2cv"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_TOOL_VERSION "21.4.0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_axi2cv_2140_33bhxrq" -library "intel_axi2cv_2140" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_TOOL_NAME "altera_mm_interconnect"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_TOOL_VERSION "19.2.0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_mm_interconnect_1920_ttgb2vq" -library "altera_mm_interconnect_1920" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_TOOL_VERSION "19.1"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_slave_translator_191_xg7rzxi" -library "altera_merlin_slave_translator_191" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_TOOL_VERSION "19.3"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_altera_merlin_master_translator_193_lgcew2q" -library "altera_merlin_master_translator_193" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_TOOL_VERSION "19.2.4"
+set_global_assignment -entity "altera_reset_controller" -library "altera_reset_controller_1924" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_TOOL_NAME "intel_vvp_ro_reg_servicer"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_TOOL_VERSION "24.5.0"
+set_global_assignment -entity "csi2_dphy_sys_csi2_tx_intel_vvp_ro_reg_servicer_2450_sm42dbi" -library "intel_vvp_ro_reg_servicer_2450" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_TOOL_NAME "intel_axi2cv_core"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_TOOL_VERSION "21.4.0"
+set_global_assignment -entity "intel_axi2cv_core" -library "intel_axi2cv_core_2140" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_TOOL_NAME "intel_axi2cv_scheduler"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_TOOL_VERSION "21.4.0"
+set_global_assignment -entity "intel_axi2cv_scheduler" -library "intel_axi2cv_scheduler_2140" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_TOOL_NAME "intel_vvp_input_interface_bridge"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_TOOL_VERSION "24.4.0"
+set_global_assignment -entity "intel_vvp_input_interface_bridge" -library "intel_vvp_input_interface_bridge_2440" -name IP_TOOL_ENV "QsysPrimePro"
+

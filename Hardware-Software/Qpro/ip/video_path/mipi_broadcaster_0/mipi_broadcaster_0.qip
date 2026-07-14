@@ -1,0 +1,75 @@
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TOP_LEVEL_COMPONENT_NAME "intel_vvp_axi4s_broadcaster"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name OCS_IP_FILE [file join $::quartus(qip_path) "../mipi_broadcaster_0.ip"]
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name OCS_IP_TYPE "intel_vvp_axi4s_broadcaster"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name OCS_IP_VERSION "24.3.0"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name OCS_IP_HASH "7vqeuzq"
+set_global_assignment -library "mipi_broadcaster_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "mipi_broadcaster_0.sopcinfo"]
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name SLD_INFO "QSYS_NAME mipi_broadcaster_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "mipi_broadcaster_0" -name MISC_FILE [file join $::quartus(qip_path) "mipi_broadcaster_0.cmp"]
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "mipi_broadcaster_0" -name MISC_FILE [file join $::quartus(qip_path) "../mipi_broadcaster_0.ip"]
+
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_NAME "aW50ZWxfdnZwX2F4aTRzX2Jyb2FkY2FzdGVyX2NvcmU="
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_DISPLAY_NAME "QVhJUyBCcm9hZGNhc3RlciBDb3Jl"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_VERSION "MjQuMy4w"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_DESCRIPTION "QVhJUyBCcm9hZGNhc3RlciBDb3Jl"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9DbG9ja2VkIFZpZGVvIGFuZCBHZW5sb2NrL0NvbXBvbmVudCBMaWJyYXJ5"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_NAME "aW50ZWxfdnZwX3Jlc2V0X3N5bmM="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_DISPLAY_NAME "VlZQIGN1c3RvbSByZXNldCBzeW5jaHJvbmlzZXI="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_VERSION "MjQuNC4w"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_DESCRIPTION "SnVzdCBsaWtlIGEgbm9ybWFsIHJlc2V0IHN5bmNocm9uaXNlciwgYnV0IHdpdGggYSBjdXN0b20gU0RDIGZpbGU="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9Db21wb25lbnQgTGlicmFyeQ=="
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_NAME "bWlwaV9icm9hZGNhc3Rlcl8wX2ludGVsX3Z2cF9heGk0c19icm9hZGNhc3Rlcl8yNDMwXzd2cWV1enE="
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_DISPLAY_NAME "QVhJUyBCcm9hZGNhc3Rlcg=="
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_VERSION "MjQuMy4w"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_DESCRIPTION "QnJvYWRjYXN0cyBhbiBBWEk0LVMgaW5wdXQgdmlkZW8gc3RyZWFtIHRvIG11bHRpcGxlIG91dHB1dHM="
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_GROUP "RFNQL1ZpZGVvIGFuZCBWaXNpb24gUHJvY2Vzc2luZy9DbG9ja2VkIFZpZGVvIGFuZCBHZW5sb2Nr"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2VuZDE2MTg5MDk2MTI5NTUuaHRtbA=="
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_NAME "bWlwaV9icm9hZGNhc3Rlcl8w"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "mipi_broadcaster_0" -library "mipi_broadcaster_0" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/intel_mtm_common_pkg.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/intel_vvp_common_pkg.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/intel_vvp_axi_pipeline_stage.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/intel_vvp_streaming_fifo.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/intel_vvp_axi_streaming_fifo.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_core_2430" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_core_2430/synth/src_hdl/intel_vvp_axi4s_broadcaster_core.sv"]
+set_global_assignment -library "intel_vvp_reset_sync_2440" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_reset_sync_2440/synth/src_hdl/intel_vvp_reset_sync.sv"]
+set_global_assignment -library "intel_vvp_axi4s_broadcaster_2430" -name VERILOG_FILE [file join $::quartus(qip_path) "intel_vvp_axi4s_broadcaster_2430/synth/mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq.v"]
+set_global_assignment -library "mipi_broadcaster_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/mipi_broadcaster_0.v"]
+
+
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_TOOL_NAME "intel_vvp_axi4s_broadcaster"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_TOOL_VERSION "24.3.0"
+set_global_assignment -entity "mipi_broadcaster_0_intel_vvp_axi4s_broadcaster_2430_7vqeuzq" -library "intel_vvp_axi4s_broadcaster_2430" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_TOOL_NAME "intel_vvp_reset_sync"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_TOOL_VERSION "24.4.0"
+set_global_assignment -entity "intel_vvp_reset_sync" -library "intel_vvp_reset_sync_2440" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_TOOL_NAME "intel_vvp_axi4s_broadcaster_core"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_TOOL_VERSION "24.3.0"
+set_global_assignment -entity "intel_vvp_axi4s_broadcaster_core" -library "intel_vvp_axi4s_broadcaster_core_2430" -name IP_TOOL_ENV "QsysPrimePro"
+

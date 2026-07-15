@@ -2,7 +2,7 @@
 # Auto-generated from Python
 # Image: 128x128 RGB8 (32-bit aligned)
 
-set outfile "c:/Users/sebastian/Desktop/Arbeitsplatz/03_Projekte/02_OneWare/AXC3000/02_Hardware-Software/scripts/raw8.bin"
+set outfile "raw8.bin"
 
 set coeff_r 0x00000050 
 set coeff_g 0x00000050 

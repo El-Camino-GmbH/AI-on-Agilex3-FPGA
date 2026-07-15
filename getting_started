@@ -1,0 +1,11 @@
+This demo is explicitly validated on Quartus Prime Pro 25.3. Other versions of Quartus are currently untested and may result in unexpected behavior.
+
+Before launching the demo, ensure your hardware is fully connected by attaching the MIPI extension board to the FPGA development board, connecting the camera to the MIPI extension board, and connecting the FPGA to your PC.
+
+The setup uses a script named 00_AI_run to flash the FPGA and initialize the demo. Because this script communicates with Quartus, you may need to adjust the path to match your local installation. If Quartus is installed in a non-default directory, open the script and update the system console path variable to point to your local installation, in the example:
+
+SYSTEM_CONSOLE_PATH = r"C:\altera_pro\25.3\syscon\bin\system-console.exe"
+
+Once the hardware is connected and the paths are configured, execute the 00_AI_run script to flash the FPGA and launch the application.
+
+The demo is designed to run automatically upon successful execution of the script. Depending on your ambient environment, you can optimize detection accuracy by adjusting the THRESHOLD parameter in the configuration to suit your current lighting conditions.
